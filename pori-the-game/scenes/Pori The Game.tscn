@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyntvyahlfexx"]
+[gd_scene load_steps=4 format=3 uid="uid://cyntvyahlfexx"]
 
 [ext_resource type="Script" uid="uid://cg4ju44ncntj4" path="res://script/Joueur_P.gd" id="1_n1u3g"]
 [ext_resource type="Texture2D" uid="uid://dngcw7yat7cp2" path="res://objet/Poridaby_face_marche1.png" id="2_n4q3y"]
@@ -22,20 +22,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4q3y"]
-size = Vector2(36, 42)
-
 [node name="Joueur_P" type="Area2D"]
-position = Vector2(492, 438)
 script = ExtResource("1_n1u3g")
 metadata/_edit_group_ = true
 metadata/_edit_horizontal_guides_ = [-137.0, -206.0]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_n4q3y")
 animation = &"marche"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 10)
-shape = SubResource("RectangleShape2D_n4q3y")
