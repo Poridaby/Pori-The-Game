@@ -26,3 +26,8 @@ func _process(delta):
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)
 	
+	if velocity.x != 0:
+		$AnimatedSprite2D.animation = "marche"
+		$AnimatedSprite2D.flip_h = velocity.x < 0
+	elif velocity.y != 0:
+		$AnimatedSprite2D.animation = "haut"
