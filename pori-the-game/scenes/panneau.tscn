@@ -1,18 +1,14 @@
+<<<<<<< HEAD
 [gd_scene load_steps=3 format=3 uid="uid://2g4lhxrf7q7i"]
+=======
+[gd_scene load_steps=2 format=3 uid="uid://2g4lhxrf7q7i"]
+>>>>>>> 3e7ef14530b6f6bdf371fd9ae9b423290509a8f0
 
 [ext_resource type="Texture2D" uid="uid://by4a0h0vfxpqb" path="res://objet/paneau.png" id="1_7n8k6"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7n8k6"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_7n8k6")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[node name="Node2D" type="Node2D"]
 
+<<<<<<< HEAD
 [node name="RigidBody2D" type="CharacterBody2D"]
 position = Vector2(622, 461)
 
@@ -20,3 +16,9 @@ position = Vector2(622, 461)
 position = Vector2(24.500015, 48.500015)
 scale = Vector2(0.28900263, 0.32102278)
 sprite_frames = SubResource("SpriteFrames_7n8k6")
+=======
+[node name="Paneau" type="Sprite2D" parent="."]
+position = Vector2(1.9073486e-06, 0)
+scale = Vector2(0.30306906, 0.3068182)
+texture = ExtResource("1_7n8k6")
+>>>>>>> 3e7ef14530b6f6bdf371fd9ae9b423290509a8f0

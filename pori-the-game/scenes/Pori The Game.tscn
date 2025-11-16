@@ -35,7 +35,6 @@ animations = [{
 
 [node name="Joueur_P" type="Area2D"]
 texture_filter = 1
-position = Vector2(649, 514)
 script = ExtResource("1_n1u3g")
 metadata/_edit_horizontal_guides_ = [-137.0, -206.0]
 metadata/_edit_group_ = true

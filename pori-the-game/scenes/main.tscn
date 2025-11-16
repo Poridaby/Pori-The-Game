@@ -7,5 +7,10 @@
 
 [node name="Joueur_P" parent="." instance=ExtResource("1_o5qli")]
 
+<<<<<<< HEAD
 [node name="RigidBody2D" parent="." instance=ExtResource("2_0wfyh")]
 position = Vector2(623, 323)
+=======
+[node name="Node2D" parent="." instance=ExtResource("2_0wfyh")]
+position = Vector2(316, 478)
+>>>>>>> 3e7ef14530b6f6bdf371fd9ae9b423290509a8f0
