@@ -33,7 +33,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Joueur_P" type="CharacterBody2D"]
+[node name="Joueur_P" type="Area2D"]
 texture_filter = 1
 position = Vector2(649, 514)
 script = ExtResource("1_n1u3g")
