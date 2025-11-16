@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cyntvyahlfexx"]
+[gd_scene load_steps=7 format=3 uid="uid://cyntvyahlfexx"]
 
 [ext_resource type="Script" uid="uid://cg4ju44ncntj4" path="res://script/Joueur_P.gd" id="1_n1u3g"]
 [ext_resource type="Texture2D" uid="uid://dngcw7yat7cp2" path="res://objet/Poridaby_face_marche1.png" id="2_n4q3y"]
 [ext_resource type="Texture2D" uid="uid://buwvslan7ffjc" path="res://objet/Poridaby_face_marche2.png" id="3_ifgp5"]
 [ext_resource type="Texture2D" uid="uid://bkd5kc4tsys8" path="res://objet/Poridaby_face_marche3.png" id="4_5b4u4"]
-[ext_resource type="Texture2D" uid="uid://by4a0h0vfxpqb" path="res://objet/paneau.png" id="5_5b4u4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4q3y"]
+size = Vector2(38, 41)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n4q3y"]
 animations = [{
@@ -31,9 +33,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4q3y"]
-size = Vector2(38, 41)
-
 [node name="Joueur_P" type="CharacterBody2D"]
 texture_filter = 1
 position = Vector2(649, 514)
@@ -41,14 +40,10 @@ script = ExtResource("1_n1u3g")
 metadata/_edit_horizontal_guides_ = [-137.0, -206.0]
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_n4q3y")
-animation = &"haut"
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 10.5)
 shape = SubResource("RectangleShape2D_n4q3y")
 
-[node name="Paneau" type="Sprite2D" parent="."]
-position = Vector2(-374, -61)
-texture = ExtResource("5_5b4u4")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n4q3y")
+animation = &"haut"

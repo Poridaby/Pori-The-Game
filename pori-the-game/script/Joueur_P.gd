@@ -7,7 +7,7 @@ var screen_size
 
 func _ready():                                       #Fonction qui permet d'ouvrir la fenêtre
 	screen_size = get_viewport_rect().size
-	hide()
+	
 
 func _process(delta):                    #Fonction qui permet d'assigner les actions des touches  
 	var velocity = Vector2.ZERO
