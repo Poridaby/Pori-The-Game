@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cyntvyahlfexx"]
+[gd_scene load_steps=5 format=3 uid="uid://cyntvyahlfexx"]
 
 [ext_resource type="Script" uid="uid://cg4ju44ncntj4" path="res://objet/pori_the_game.gd" id="1_n1u3g"]
 [ext_resource type="Texture2D" uid="uid://dngcw7yat7cp2" path="res://objet/Poridaby_face_marche1.png" id="2_n4q3y"]
+[ext_resource type="Texture2D" uid="uid://bkd5kc4tsys8" path="res://objet/Poridaby_face_marche3.png" id="4_ifgp5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n4q3y"]
 animations = [{
@@ -16,6 +17,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_n4q3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ifgp5")
 }],
 "loop": true,
 "name": &"marche",
@@ -25,6 +29,7 @@ animations = [{
 [node name="Joueur_P" type="Area2D"]
 script = ExtResource("1_n1u3g")
 metadata/_edit_group_ = true
+metadata/_edit_horizontal_guides_ = [-137.0, -206.0]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_n4q3y")
