@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://be0cbrh4ogbni"]
+[gd_scene load_steps=2 format=3 uid="uid://q6dmjs06d6i3"]
 
 [ext_resource type="Texture2D" uid="uid://by4a0h0vfxpqb" path="res://objet/paneau.png" id="1_v3wuo"]
 
-[node name="RigidBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D"]
 
 [node name="Paneau" type="Sprite2D" parent="."]
 position = Vector2(5.9604645e-08, 0)
