@@ -33,11 +33,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4q3y"]
 size = Vector2(38, 41)
 
-[node name="Joueur_P" type="Area2D"]
+[node name="Joueur_P" type="CharacterBody2D"]
 texture_filter = 1
+position = Vector2(649, 514)
 script = ExtResource("1_n1u3g")
-metadata/_edit_group_ = true
 metadata/_edit_horizontal_guides_ = [-137.0, -206.0]
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_n4q3y")

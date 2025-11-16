@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwgfip8ij7ly0"]
+
+[ext_resource type="Texture2D" uid="uid://cruvpsh7krtet" path="res://objet/Capture_d_écran_2025-10-30_163446-removebg-preview.png" id="1_5p55f"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 144.0
+offset_top = 73.0
+offset_right = 184.0
+offset_bottom = 113.0
+
+[node name="CaptureDÉcran20251030163446RemovebgPreview" type="Sprite2D" parent="."]
+position = Vector2(-143.00002, -65)
+scale = Vector2(0.33567774, 0.26562497)
+texture = ExtResource("1_5p55f")
