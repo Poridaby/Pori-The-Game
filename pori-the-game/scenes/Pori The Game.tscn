@@ -23,7 +23,6 @@ animations = [{
 }]
 
 [node name="Joueur_P" type="Area2D"]
-position = Vector2(540, 393)
 script = ExtResource("1_n1u3g")
 metadata/_edit_group_ = true
 metadata/_edit_horizontal_guides_ = [-137.0, -206.0]
