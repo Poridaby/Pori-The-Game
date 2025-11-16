@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bkd5kc4tsys8" path="res://objet/Poridaby_face_marche3.png" id="4_5b4u4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4q3y"]
-size = Vector2(38, 41)
+size = Vector2(69, 83)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n4q3y"]
 animations = [{
@@ -33,14 +33,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Joueur_P" type="Area2D"]
+[node name="Joueur_P" type="CharacterBody2D"]
 texture_filter = 1
+disable_mode = 1
 script = ExtResource("1_n1u3g")
 metadata/_edit_horizontal_guides_ = [-137.0, -206.0]
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 10.5)
+position = Vector2(2.5, -3.5)
 shape = SubResource("RectangleShape2D_n4q3y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

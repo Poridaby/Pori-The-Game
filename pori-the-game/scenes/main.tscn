@@ -6,11 +6,11 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="Joueur_P" parent="." instance=ExtResource("1_o5qli")]
-position = Vector2(900, 512)
-
 [node name="Panneau" parent="." instance=ExtResource("2_0wfyh")]
 position = Vector2(575, 517)
+
+[node name="Joueur_P" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(900, 512)
 
 [node name="panneau_lecture" parent="." instance=ExtResource("3_sugp2")]
 visible = false

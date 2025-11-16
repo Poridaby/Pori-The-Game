@@ -1,36 +1,38 @@
-extends Node2D
+extends CharacterBody2D
 
-
-
-@export var speed = 400                #Declaration des variables
+@export var speed = 400
 var screen_size
 
-func _ready():                                       #Fonction qui permet d'ouvrir la fenêtre
+func _ready():
 	screen_size = get_viewport_rect().size
-	
 
-func _process(delta):                    #Fonction qui permet d'assigner les actions des touches  
-	var velocity = Vector2.ZERO
+
+func _physics_process(_delta):                     #Fonction qui permet d'assigner les actions des touches
+	var vel = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
-		velocity.x += 1
+		vel.x += 1
 	if Input.is_action_pressed("move_left"):
-		velocity.x -= 1
+		vel.x -= 1
 	if Input.is_action_pressed("move_up"):
-		velocity.y -= 1
+		vel.y -= 1
 	if Input.is_action_pressed("move_down"):
-		velocity.y += 1
-		
-	if velocity.length() > 0:                         #Endroit qui permet de déclencher ou non l'animation
-		velocity = velocity.normalized() * speed;
+		vel.y += 1
+
+
+	if vel.length() > 0:                           #Endroit qui permet de déclencher ou non l'animation
+		vel = vel.normalized() * speed
 		$AnimatedSprite2D.play()
 	else:
 		$AnimatedSprite2D.stop()
-	
-	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)
-	
-	if velocity.x != 0:                                    #permet de changer d'animation en fonction de si le perso se déplace en vertical ou en horizontal
+
+	velocity = vel
+
+	# move_and_slide() gère automatiquement les collisions
+	# et empêche le personnage de traverser un StaticBody2D
+	move_and_slide()
+
+	if vel.x != 0:                      # Si déplacement horizontal
 		$AnimatedSprite2D.animation = "marche"
-		$AnimatedSprite2D.flip_h = velocity.x < 0
-	elif velocity.y != 0:
+		$AnimatedSprite2D.flip_h = vel.x < 0    # Retourne le sprite si on va à gauche
+	elif vel.y != 0:                    # Si déplacement vertical
 		$AnimatedSprite2D.animation = "haut"
