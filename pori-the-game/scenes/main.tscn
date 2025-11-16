@@ -1,16 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://cnxcl5ylgdvxv"]
 
 [ext_resource type="PackedScene" uid="uid://cyntvyahlfexx" path="res://scenes/Pori The Game.tscn" id="1_o5qli"]
-[ext_resource type="PackedScene" uid="uid://2g4lhxrf7q7i" path="res://scenes/panneau.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://be0cbrh4ogbni" path="res://scenes/panneau.tscn" id="2_0wfyh"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Joueur_P" parent="." instance=ExtResource("1_o5qli")]
 
-<<<<<<< HEAD
 [node name="RigidBody2D" parent="." instance=ExtResource("2_0wfyh")]
-position = Vector2(623, 323)
-=======
-[node name="Node2D" parent="." instance=ExtResource("2_0wfyh")]
-position = Vector2(316, 478)
->>>>>>> 3e7ef14530b6f6bdf371fd9ae9b423290509a8f0
+position = Vector2(575, 517)
