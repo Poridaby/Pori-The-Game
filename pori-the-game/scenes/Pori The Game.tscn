@@ -27,7 +27,6 @@ size = Vector2(38, 41)
 
 [node name="Joueur_P" type="Area2D"]
 texture_filter = 1
-position = Vector2(464, 508)
 script = ExtResource("1_n1u3g")
 metadata/_edit_group_ = true
 metadata/_edit_horizontal_guides_ = [-137.0, -206.0]
