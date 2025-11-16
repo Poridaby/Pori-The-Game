@@ -12,5 +12,6 @@ position = Vector2(900, 512)
 [node name="Panneau" parent="." instance=ExtResource("2_0wfyh")]
 position = Vector2(575, 517)
 
-[node name="Node2D" parent="." instance=ExtResource("3_sugp2")]
+[node name="panneau_lecture" parent="." instance=ExtResource("3_sugp2")]
+visible = false
 position = Vector2(833, 1027)
