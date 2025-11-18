@@ -1,17 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://q6dmjs06d6i3"]
+[gd_scene load_steps=5 format=3 uid="uid://q6dmjs06d6i3"]
 
 [ext_resource type="Texture2D" uid="uid://by4a0h0vfxpqb" path="res://objet/paneau.png" id="1_v3wuo"]
+[ext_resource type="Script" uid="uid://bauli5shx30di" path="res://script/interact panneau.gd" id="2_6uctv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7n8k6"]
-size = Vector2(140, 84)
+size = Vector2(341.51862, 169.1173)
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6uctv"]
+size = Vector2(624.8237, 464.0891)
 
-[node name="Paneau" type="Sprite2D" parent="."]
-position = Vector2(5.9604645e-08, 0)
-scale = Vector2(0.40601024, 0.48437497)
+[node name="Paneau" type="Sprite2D"]
+position = Vector2(-1.1920929e-07, -1.1368684e-13)
+scale = Vector2(0.25767267, 0.25426137)
 texture = ExtResource("1_v3wuo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -40)
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-6.9395774e-06, -80.62573)
+scale = Vector2(1, 1.0000005)
 shape = SubResource("RectangleShape2D_7n8k6")
+
+[node name="Interact Range" type="Area2D" parent="."]
+script = ExtResource("2_6uctv")
+
+[node name="Range" type="CollisionShape2D" parent="Interact Range"]
+position = Vector2(4.626385e-07, -2.3841858e-07)
+scale = Vector2(1, 1.0000005)
+shape = SubResource("RectangleShape2D_6uctv")
+debug_color = Color(0.9280448, 3.4654142e-05, 0.6681644, 0.41960785)
