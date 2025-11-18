@@ -6,8 +6,8 @@ var screen_size
 func _ready():
 	screen_size = get_viewport_rect().size
 
-
-func _physics_process(_delta):                     #Fonction qui permet d'assigner les actions des touches
+#Fonction qui permet d'assigner les actions des touches
+func _physics_process(_delta):
 	var vel = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		vel.x += 1
@@ -18,8 +18,8 @@ func _physics_process(_delta):                     #Fonction qui permet d'assign
 	if Input.is_action_pressed("move_down"):
 		vel.y += 1
 
-
-	if vel.length() > 0:                           #Endroit qui permet de déclencher ou non l'animation
+	#Endroit qui permet de déclencher ou non l'animation
+	if vel.length() > 0:
 		vel = vel.normalized() * speed
 		$AnimatedSprite2D.play()
 	else:
@@ -31,8 +31,11 @@ func _physics_process(_delta):                     #Fonction qui permet d'assign
 	# et empêche le personnage de traverser un StaticBody2D
 	move_and_slide()
 
-	if vel.x != 0:                      # Si déplacement horizontal
+	# Si déplacement horizontal
+	if vel.x != 0:
 		$AnimatedSprite2D.animation = "marche"
-		$AnimatedSprite2D.flip_h = vel.x < 0    # Retourne le sprite si on va à gauche
-	elif vel.y != 0:                    # Si déplacement vertical
+		# Retourne le sprite si on va à gauche
+		$AnimatedSprite2D.flip_h = vel.x < 0  
+	# Sinon si déplacement vertical  
+	elif vel.y != 0:                    
 		$AnimatedSprite2D.animation = "haut"
