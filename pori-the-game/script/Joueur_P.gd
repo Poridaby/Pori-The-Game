@@ -1,13 +1,16 @@
 extends CharacterBody2D
 
+
 @export var speed = 400
-var screen_size
 
-func _ready():
-	screen_size = get_viewport_rect().size
 
-#Fonction qui permet d'assigner les actions des touches
 func _physics_process(_delta):
+	"""
+	Assigne les touches de déplacement
+	:param _delta: a laisser, jamais utilisé mais obligatoire pour que la fonction soit reconnue
+	:comportement: déplacement du personnage lors de l'utilisation des touches
+	"""
+	# Assigne 1 velocité par touches
 	var vel = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		vel.x += 1
