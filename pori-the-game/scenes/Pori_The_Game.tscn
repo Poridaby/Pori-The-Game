@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ob8ee2f8nyuc"]
+[gd_scene load_steps=7 format=3 uid="uid://k7xfu74rukot"]
 
 [ext_resource type="Script" uid="uid://cg4ju44ncntj4" path="res://script/Joueur_P.gd" id="1_n1u3g"]
 [ext_resource type="Texture2D" uid="uid://dngcw7yat7cp2" path="res://objet/Poridaby_face_marche1.png" id="2_n4q3y"]
