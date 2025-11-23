@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpkhdgwavmpuc"]
+[gd_scene load_steps=4 format=3 uid="uid://cpkhdgwavmpuc"]
 
 [ext_resource type="Texture2D" uid="uid://cohebqbv2wfc4" path="res://objet/boite de dialogue.png" id="1_haq7k"]
+[ext_resource type="Script" uid="uid://b67aoffo3oxk1" path="res://script/panneau_dialogue.gd" id="1_v8dn8"]
 [ext_resource type="Script" uid="uid://cwv03yjsdbmo4" path="res://script/texte_dialogue.gd" id="2_onyid"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_v8dn8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

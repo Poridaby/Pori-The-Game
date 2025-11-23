@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://duchss15jdix1"]
+[gd_scene load_steps=9 format=3 uid="uid://duchss15jdix1"]
 
-[ext_resource type="Script" uid="uid://bkm3aafrxcd2t" path="res://scenes/warp.gd" id="1_dql4g"]
-[ext_resource type="PackedScene" uid="uid://be0cbrh4ogbni" path="res://scenes/panneau.tscn" id="1_sdcqm"]
+[ext_resource type="Script" path="res://scenes/warp.gd" id="1_dql4g"]
+[ext_resource type="PackedScene" uid="uid://q6dmjs06d6i3" path="res://scenes/panneau.tscn" id="1_sdcqm"]
 [ext_resource type="PackedScene" uid="uid://ob8ee2f8nyuc" path="res://scenes/Perso_principal.tscn" id="2_dql4g"]
-[ext_resource type="PackedScene" uid="uid://cpkhdgwavmpuc" path="res://scenes/panneau_dialogue.tscn" id="3_ht3ym"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_tbgi4"]
 b = Vector2(1920, 0)
@@ -31,9 +30,6 @@ position = Vector2(575, 517)
 
 [node name="Joueur_P" parent="." instance=ExtResource("2_dql4g")]
 position = Vector2(900, 512)
-
-[node name="panneau_lecture" parent="." instance=ExtResource("3_ht3ym")]
-position = Vector2(909, 658)
 
 [node name="Map Border" type="StaticBody2D" parent="."]
 collision_priority = 20.0
