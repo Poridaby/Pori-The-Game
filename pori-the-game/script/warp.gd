@@ -6,8 +6,8 @@ extends Node2D
 
 func _on_exit_body_entered(_body: Node2D) -> void:
 	"""
-	Je sais pas ce que ca fait
-	:comportement: pori fait ca for pitty
+	Teleporte le joueur d'une zone a l'autre
+	:comportement: change de scene
 	"""
 	var next_scene = load(next_scene_right)
 	var next_scene_instances = next_scene.instantiate()
@@ -17,8 +17,8 @@ func _on_exit_body_entered(_body: Node2D) -> void:
 
 func _on_exit_left_body_entered(_body: Node2D) -> void:
 	"""
-	Je sais pas ce que ca fait
-	:comportement: pori fait ca for pitty
+	Teleporte le joueur d'une zone a l'autre
+	:comportement: change de scene
 	"""
 	var next_scene = load(next_scene_left)
 	var next_scene_instances = next_scene.instantiate()
