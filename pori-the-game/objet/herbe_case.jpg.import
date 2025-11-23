@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfbwt1nt5c4s1"
-path="res://.godot/imported/warp.png-83b4d778cd3af312ce0649f4e8a36e3b.ctex"
+uid="uid://ikhbqy6et7qt"
+path="res://.godot/imported/herbe_case.jpg-84f556d7cbb7bb65db212feb9ef161ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objet/warp.png"
-dest_files=["res://.godot/imported/warp.png-83b4d778cd3af312ce0649f4e8a36e3b.ctex"]
+source_file="res://objet/herbe_case.jpg"
+dest_files=["res://.godot/imported/herbe_case.jpg-84f556d7cbb7bb65db212feb9ef161ec.ctex"]
 
 [params]
 
