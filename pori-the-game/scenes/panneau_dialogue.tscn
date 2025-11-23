@@ -1,27 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpkhdgwavmpuc"]
+[gd_scene load_steps=2 format=3 uid="uid://cpkhdgwavmpuc"]
 
-[ext_resource type="Texture2D" uid="uid://c03h0opteywsn" path="res://objet/paneau_tige.png" id="1_v8dn8"]
-[ext_resource type="Texture2D" uid="uid://bqu22iawjgu5v" path="res://objet/paneau_haut.png" id="2_u8pk6"]
-[ext_resource type="Texture2D" uid="uid://co8nav2qublsi" path="res://objet/ligne.png" id="3_bh28o"]
+[ext_resource type="Texture2D" uid="uid://cohebqbv2wfc4" path="res://objet/boite de dialogue.png" id="1_haq7k"]
 
 [node name="Node2D" type="Node2D"]
-visible = false
 
-[node name="PaneauTige" type="Sprite2D" parent="."]
-position = Vector2(0, 62)
-texture = ExtResource("1_v8dn8")
-
-[node name="PaneauHaut" type="Sprite2D" parent="."]
-position = Vector2(0, -175.5)
-scale = Vector2(4.1391306, 1.6556603)
-texture = ExtResource("2_u8pk6")
-
-[node name="Ligne" type="Sprite2D" parent="."]
-position = Vector2(58.5, -3.9999998)
-scale = Vector2(1.5208333, 1)
-texture = ExtResource("3_bh28o")
-
-[node name="Ligne2" type="Sprite2D" parent="."]
-position = Vector2(-55.000004, -3.9999995)
-scale = Vector2(1.3749999, 0.99999994)
-texture = ExtResource("3_bh28o")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -1)
+scale = Vector2(8.35, 3.59)
+texture = ExtResource("1_haq7k")
