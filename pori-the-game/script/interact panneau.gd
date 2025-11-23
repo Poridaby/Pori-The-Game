@@ -3,7 +3,7 @@ extends Area2D
 
 var joueur_in_range = false
 var in_interact = false
-@onready var sprite = $/root/Main/panneau_lecture
+@onready var sprite = $/root/Main/Joueur_P/Panneau
 
 func _ready():
 	"""

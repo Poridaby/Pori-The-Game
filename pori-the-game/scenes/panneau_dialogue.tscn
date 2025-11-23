@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpkhdgwavmpuc"]
+[gd_scene load_steps=3 format=3 uid="uid://cpkhdgwavmpuc"]
 
 [ext_resource type="Texture2D" uid="uid://cohebqbv2wfc4" path="res://objet/boite de dialogue.png" id="1_haq7k"]
+[ext_resource type="Script" uid="uid://cwv03yjsdbmo4" path="res://script/texte_dialogue.gd" id="2_onyid"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -9,3 +10,18 @@ texture_filter = 1
 position = Vector2(0, -1)
 scale = Vector2(8.35, 3.59)
 texture = ExtResource("1_haq7k")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -393.00003
+offset_top = -45.000004
+offset_right = 390.99997
+offset_bottom = 103.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_right = 786.0
+offset_bottom = 148.0
+scroll_active = false
+script = ExtResource("2_onyid")

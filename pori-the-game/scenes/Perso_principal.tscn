@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ob8ee2f8nyuc"]
+[gd_scene load_steps=8 format=3 uid="uid://ob8ee2f8nyuc"]
 
 [ext_resource type="Script" uid="uid://cg4ju44ncntj4" path="res://script/Joueur_P.gd" id="1_n1u3g"]
 [ext_resource type="Texture2D" uid="uid://dngcw7yat7cp2" path="res://objet/Poridaby_face_marche1.png" id="2_n4q3y"]
 [ext_resource type="Texture2D" uid="uid://buwvslan7ffjc" path="res://objet/Poridaby_face_marche2.png" id="3_ifgp5"]
 [ext_resource type="Texture2D" uid="uid://bkd5kc4tsys8" path="res://objet/Poridaby_face_marche3.png" id="4_5b4u4"]
+[ext_resource type="PackedScene" uid="uid://cpkhdgwavmpuc" path="res://scenes/panneau_dialogue.tscn" id="5_4nhif"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4q3y"]
 size = Vector2(38, 41)
@@ -35,7 +36,7 @@ animations = [{
 
 [node name="Joueur_P" type="CharacterBody2D"]
 texture_filter = 1
-position = Vector2(911, 534)
+position = Vector2(910.59, 534)
 script = ExtResource("1_n1u3g")
 metadata/_edit_horizontal_guides_ = [-137.0, -206.0]
 metadata/_edit_group_ = true
@@ -50,3 +51,6 @@ animation = &"haut"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
+
+[node name="Panneau" parent="." instance=ExtResource("5_4nhif")]
+position = Vector2(2.4099731, 113)
