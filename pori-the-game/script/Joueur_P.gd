@@ -27,8 +27,10 @@ func _physics_process(_delta):
 		$AnimatedSprite2D.play()
 	else:
 		$AnimatedSprite2D.stop()
-
-	velocity = vel
+	if global_var.player_can_move == true:
+		velocity = vel
+	else:
+		velocity = Vector2(0,0)
 
 	# move_and_slide() gère automatiquement les collisions
 	# et empêche le personnage de traverser un StaticBody2D

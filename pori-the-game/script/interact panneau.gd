@@ -2,6 +2,7 @@ extends Area2D
 
 
 var joueur_in_range = false
+var in_interact = false
 @onready var sprite = $/root/Main/panneau_lecture
 
 func _ready():
@@ -19,11 +20,13 @@ func _process(_delta):
 	:comportement affiche le panneau au bon moment
 	"""
 	# Affiche le panneau quand l'utilisateur interagit dans la portée
-	if overlaps_body($/root/Main/Joueur_P) and Input.is_action_just_pressed("interact"):
+	if overlaps_body($/root/Main/Joueur_P) and Input.is_action_just_pressed("interact") and not in_interact:
 		sprite.visible = true
-	# Ne fais rien si le joueur est dans la portée
-	elif overlaps_body($/root/Main/Joueur_P):
-		pass
+		global_var.player_can_move = false
+		await get_tree().create_timer(0.5).timeout
+		in_interact = true
 	# Masque le paneau quand l'utilisateur est trop loin
-	else:
+	if Input.is_action_just_pressed("interact") and in_interact:
 		sprite.visible = false
+		global_var.player_can_move = true
+		in_interact = false
