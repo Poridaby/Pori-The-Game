@@ -1,11 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4h7cnahuanro"]
+[gd_scene load_steps=5 format=3 uid="uid://b4h7cnahuanro"]
 
 [ext_resource type="Texture2D" uid="uid://ikhbqy6et7qt" path="res://objet/herbe_case.jpg" id="1_1msdh"]
-[ext_resource type="Script" uid="uid://bkm3aafrxcd2t" path="res://scenes/warp.gd" id="1_o0pq4"]
+[ext_resource type="Script" uid="uid://bkm3aafrxcd2t" path="res://script/warp.gd" id="1_o0pq4"]
 [ext_resource type="PackedScene" uid="uid://ob8ee2f8nyuc" path="res://scenes/Perso_principal.tscn" id="2_i7dj5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0pq4"]
+size = Vector2(69.5, 217.5)
 
 [node name="plaine" type="Node2D"]
 script = ExtResource("1_o0pq4")
+next_scene_left = "res://scenes/Inser_ellenon.tscn"
 
 [node name="HerbeCase" type="Sprite2D" parent="."]
 position = Vector2(967.00006, 557.00006)
@@ -18,5 +22,12 @@ position = Vector2(40, 671)
 [node name="SpawnerLeft" type="Marker2D" parent="."]
 position = Vector2(31, 668)
 
-[node name="SpawnerRight" type="Marker2D" parent="."]
-position = Vector2(1901, 646)
+[node name="ExitLeft" type="Area2D" parent="."]
+light_mask = 4
+position = Vector2(-54, 677)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitLeft"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_o0pq4")
+
+[connection signal="body_entered" from="ExitLeft" to="." method="_on_exit_left_body_entered"]
