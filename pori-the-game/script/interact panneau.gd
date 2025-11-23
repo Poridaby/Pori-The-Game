@@ -21,8 +21,9 @@ func _process(_delta):
 	"""
 	# Affiche le panneau quand l'utilisateur interagit dans la portée
 	if overlaps_body($/root/Main/Joueur_P) and Input.is_action_just_pressed("interact") and not in_interact:
-		sprite.visible = true
 		global_var.player_can_move = false
+		global_var.texte_dialogue = "Je suis un panneau !"
+		sprite.visible = true
 		await get_tree().create_timer(0.5).timeout
 		in_interact = true
 	# Masque le paneau quand l'utilisateur est trop loin

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Pori The Game"
-run/main_scene="uid://duchss15jdix1"
+run/main_scene="uid://dygsd87v3m7t4"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
 [autoload]
