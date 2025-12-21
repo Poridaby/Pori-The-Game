@@ -3,6 +3,19 @@ extends CharacterBody2D
 
 @export var speed = 400
 
+var stats = {
+	"PV":10,
+	"PM":10,
+	"ATK":10,
+	"DEF":10,
+	"PIERRE":10,
+	}
+
+func _ready():
+	load_stats()
+
+func _exit_tree():
+	save_stats()
 
 func _physics_process(_delta):
 	"""
@@ -45,3 +58,25 @@ func _physics_process(_delta):
 
 	else:
 		$AnimatedSprite2D.stop()
+
+func load_stats():
+	if not FileAccess.file_exists("user://player_stats.json"):
+		return
+
+	var file := FileAccess.open("user://player_stats.json", FileAccess.READ)
+	var content := file.get_as_text()
+	file.close()
+
+	var data = JSON.parse_string(content)
+	if typeof(data) == TYPE_DICTIONARY:
+		stats = data
+
+
+func save_stats():
+	var file := FileAccess.open("user://player_stats.json", FileAccess.WRITE)
+	if file == null:
+		return
+
+	var json_string := JSON.stringify(stats)
+	file.store_string(json_string)
+	file.close()
