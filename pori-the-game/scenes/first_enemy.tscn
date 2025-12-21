@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh850ic4pibnn"]
+
+[ext_resource type="Texture2D" uid="uid://bl1hn5uijamw" path="res://objet/enemie.png" id="1_66u31"]
+
+[node name="enemy" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="Enemie" type="Sprite2D" parent="Area2D"]
+texture_filter = 1
+texture = ExtResource("1_66u31")
