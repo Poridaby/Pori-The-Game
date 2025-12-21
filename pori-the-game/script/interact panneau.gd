@@ -26,7 +26,7 @@ func _process(_delta):
 		sprite.visible = true
 		await get_tree().create_timer(0.5).timeout
 		in_interact = true
-	# Masque le paneau quand l'utilisateur est trop loin
+	# Masque le paneau quand l'utilisateur réintéragie
 	if Input.is_action_just_pressed("interact") and in_interact:
 		sprite.visible = false
 		global_var.player_can_move = true
