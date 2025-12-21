@@ -5,7 +5,7 @@ class_name Player
 @export var speed = 400
 
 var stats = {
-	"XP":0,
+	"XP":10,
 	"PV":10,
 	"PM":10,
 	"ATK":10,
