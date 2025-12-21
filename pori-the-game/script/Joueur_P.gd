@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var speed = 400
 
 var stats = {
+	"XP":0,
 	"PV":10,
 	"PM":10,
 	"ATK":10,
@@ -59,6 +60,7 @@ func _physics_process(_delta):
 	else:
 		$AnimatedSprite2D.stop()
 
+# Système de sauvegarde
 func load_stats():
 	if not FileAccess.file_exists("user://player_stats.json"):
 		return
@@ -80,3 +82,7 @@ func save_stats():
 	var json_string := JSON.stringify(stats)
 	file.store_string(json_string)
 	file.close()
+
+#Système d'xp
+func lvl_up():
+	pass
