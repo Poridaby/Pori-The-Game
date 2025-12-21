@@ -3,6 +3,7 @@ class_name Player
 
 
 @export var speed = 400
+var next_spawn_name: String = ""
 
 var stats = {
 	"XP":10,
@@ -15,6 +16,12 @@ var stats = {
 
 func _ready():
 	load_stats()
+	if global_var.next_spawn_name != "":
+		var spawner = get_tree().current_scene.get_node(global_var.next_spawn_name)
+		global_position = spawner.global_position
+		velocity = Vector2.ZERO
+		global_var.next_spawn_name = ""  # reset
+
 
 func _exit_tree():
 	save_stats()

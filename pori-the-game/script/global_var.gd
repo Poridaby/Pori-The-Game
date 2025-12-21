@@ -5,3 +5,5 @@ var player_can_move = true
 
 # Texte a afficher dans la boite de dialogue
 var texte_dialogue = "Ereur"
+
+var next_spawn_name: String = ""
