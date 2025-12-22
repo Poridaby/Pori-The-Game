@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-
+var statis = Character.new()
 @export var speed = 400
 var next_spawn_name: String = ""
 
@@ -77,7 +77,7 @@ func load_stats():
 	#Converti le contenu en dict
 	var data = JSON.parse_string(content)
 	if typeof(data) == TYPE_DICTIONARY:
-		global_var.stats_1 = data
+		statis.stats = data
 
 
 func save_stats():
@@ -91,7 +91,7 @@ func save_stats():
 		return
 
 	#Edite le fichier de sauvegarde
-	var json_string := JSON.stringify(global_var.stats_1)
+	var json_string := JSON.stringify(statis.stats)
 	file.store_string(json_string)
 	file.close()
 
