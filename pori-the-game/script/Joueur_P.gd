@@ -5,16 +5,6 @@ class_name Player
 @export var speed = 400
 var next_spawn_name: String = ""
 
-var stats = {
-	"XP":10,
-	"PV":10,
-	"PM":10,
-	"ATK":10,
-	"DEF":10,
-	"PIERRE":10,
-	}
-
-
 func _ready():
 	load_stats()
 	if global_var.next_spawn_name != "":
@@ -87,7 +77,7 @@ func load_stats():
 	#Converti le contenu en dict
 	var data = JSON.parse_string(content)
 	if typeof(data) == TYPE_DICTIONARY:
-		stats = data
+		global_var.stats_1 = data
 
 
 func save_stats():
@@ -101,7 +91,7 @@ func save_stats():
 		return
 
 	#Edite le fichier de sauvegarde
-	var json_string := JSON.stringify(stats)
+	var json_string := JSON.stringify(global_var.stats_1)
 	file.store_string(json_string)
 	file.close()
 
