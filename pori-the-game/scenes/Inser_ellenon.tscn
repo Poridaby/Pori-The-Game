@@ -25,7 +25,6 @@ size = Vector2(162, 456.5)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_dql4g")
-next_scene_right = "res://scenes/plaine.tscn"
 
 [node name="Panneau" parent="." instance=ExtResource("1_sdcqm")]
 position = Vector2(575, 517)

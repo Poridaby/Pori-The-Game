@@ -7,6 +7,7 @@ var stats := {
 	"XP":0,
 	"PV_max":10,
 	"PV":10,
+	"PM_max":10,
 	"PM":10,
 	"ATK":10,
 	"DEF":10,
