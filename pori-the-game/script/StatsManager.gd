@@ -6,7 +6,6 @@ const SAVE_PATH := "user://player_stats.json"
 
 func _ready():
 	load_stats()
-	print(stats.def)
 
 func load_stats():
 	if not FileAccess.file_exists(SAVE_PATH):
