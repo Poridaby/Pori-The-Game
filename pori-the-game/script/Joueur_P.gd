@@ -94,7 +94,3 @@ func save_stats():
 	var json_string := JSON.stringify(statis.stats)
 	file.store_string(json_string)
 	file.close()
-
-#Système d'xp
-func lvl_up():
-	pass
