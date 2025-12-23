@@ -3,8 +3,8 @@ extends Control
 enum Turn { PLAYER, MOB }
 var turn_now : Turn
 
-var character : Character
-var enemy : Enemy
+var character : Stats
+var enemy : Stats
 
 func turn_player():
 	if Input.is_action_pressed("action_fight"):
@@ -18,8 +18,8 @@ func turn_enemy():
 	pass
 
 func _ready():
-	character = Character.new()
-	enemy = Enemy.new()
+	character = Stats.new()
+	enemy = Stats.new()
 	
 	if character.stats["SPEED"] >= enemy.stats["SPEED"]:
 		turn_now = Turn.PLAYER
