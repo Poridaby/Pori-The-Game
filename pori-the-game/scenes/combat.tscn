@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dm6g17dqct7ip"]
+[gd_scene load_steps=8 format=3 uid="uid://dm6g17dqct7ip"]
 
 [ext_resource type="Texture2D" uid="uid://du66nyjjny5ve" path="res://objet/New_Piskel.png" id="1_764e3"]
 [ext_resource type="Script" uid="uid://bkm3aafrxcd2t" path="res://script/warp.gd" id="1_qajva"]
 [ext_resource type="Texture2D" uid="uid://ciy5g07bh23mv" path="res://objet/player_fight_state.png" id="3_aic3r"]
 [ext_resource type="Script" uid="uid://ci6edhuxgnt0r" path="res://script/Joueur_fight.gd" id="3_p71o4"]
 [ext_resource type="Script" uid="uid://dgv8bxgitmt86" path="res://script/controle.gd" id="6_vcae8"]
+[ext_resource type="PackedScene" uid="uid://dl5i0k5vgw0eb" path="res://scenes/Enemy_fight.tscn" id="7_4gnb8"]
 [ext_resource type="Texture2D" uid="uid://cohebqbv2wfc4" path="res://objet/boite de dialogue.png" id="7_osi8t"]
 
 [node name="Node2D" type="Node2D"]
@@ -36,3 +37,6 @@ texture_filter = 1
 position = Vector2(958.99994, 869.99994)
 scale = Vector2(19.210001, 6.1875)
 texture = ExtResource("7_osi8t")
+
+[node name="Node2D" parent="." instance=ExtResource("7_4gnb8")]
+position = Vector2(1544, 445)

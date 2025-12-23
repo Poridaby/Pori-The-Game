@@ -1,12 +1,19 @@
 extends Resource
 class_name Stats
 
-@export var name = "Tonar"
-@export var pv_max : int = 14
-@export var pv : int = pv_max
-@export var pm_max : int = 11
-@export var pm : int = pm_max
-@export var atk : int = 12
-@export var def : int = 10
-@export var spd : int = 8
-@export var pierre : int = 6
+@export var name:= "Tonar"
+@export var pv_max: int = 10
+@export var pm_max: int = 10
+@export var atk: int = 2
+@export var def: int = 1
+@export var spd: int = 1
+@export var pierre: int = 9
+
+var pv: int
+var pm: int
+
+func _init():
+	pv = pv_max
+
+func reset():
+	pv = pv_max
