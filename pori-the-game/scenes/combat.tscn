@@ -1,11 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dm6g17dqct7ip"]
+[gd_scene load_steps=7 format=3 uid="uid://dm6g17dqct7ip"]
 
 [ext_resource type="Texture2D" uid="uid://du66nyjjny5ve" path="res://objet/New_Piskel.png" id="1_764e3"]
 [ext_resource type="Script" uid="uid://bkm3aafrxcd2t" path="res://script/warp.gd" id="1_qajva"]
 [ext_resource type="Texture2D" uid="uid://ciy5g07bh23mv" path="res://objet/player_fight_state.png" id="3_aic3r"]
-[ext_resource type="Script" uid="uid://ci6edhuxgnt0r" path="res://script/j_1.gd" id="3_p71o4"]
-[ext_resource type="Texture2D" uid="uid://bl1hn5uijamw" path="res://objet/enemie.png" id="4_4l26h"]
-[ext_resource type="Script" uid="uid://dfuynhptbgba" path="res://script/ptitcrote.gd" id="5_4gnb8"]
+[ext_resource type="Script" uid="uid://ci6edhuxgnt0r" path="res://script/Joueur_fight.gd" id="3_p71o4"]
 [ext_resource type="Script" uid="uid://dgv8bxgitmt86" path="res://script/controle.gd" id="6_vcae8"]
 [ext_resource type="Texture2D" uid="uid://cohebqbv2wfc4" path="res://objet/boite de dialogue.png" id="7_osi8t"]
 
@@ -25,16 +23,6 @@ script = ExtResource("3_p71o4")
 texture_filter = 1
 scale = Vector2(10.03125, 10.5)
 texture = ExtResource("3_aic3r")
-
-[node name="Enemy" type="Node2D" parent="."]
-position = Vector2(1539, 537)
-script = ExtResource("5_4gnb8")
-
-[node name="Enemie" type="Sprite2D" parent="Enemy"]
-texture_filter = 1
-scale = Vector2(6.78125, 7.09375)
-texture = ExtResource("4_4l26h")
-flip_h = true
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3

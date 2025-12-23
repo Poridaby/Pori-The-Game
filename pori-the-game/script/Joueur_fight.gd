@@ -1,4 +1,4 @@
-extends Stats
+extends Node
 
 func player_attack():
 	print("Ca frappe")

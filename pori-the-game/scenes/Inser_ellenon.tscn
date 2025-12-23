@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bkm3aafrxcd2t" path="res://script/warp.gd" id="1_dql4g"]
 [ext_resource type="PackedScene" uid="uid://be0cbrh4ogbni" path="res://scenes/panneau.tscn" id="1_sdcqm"]
 [ext_resource type="PackedScene" uid="uid://ob8ee2f8nyuc" path="res://scenes/Perso_principal.tscn" id="2_dql4g"]
-[ext_resource type="PackedScene" uid="uid://dh850ic4pibnn" path="res://scenes/first_enemy.tscn" id="4_dql4g"]
+[ext_resource type="PackedScene" uid="uid://ct7p06r0bcx08" path="res://scenes/enemy_scenes/ptitcrote.tscn" id="4_dql4g"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_tbgi4"]
 b = Vector2(1920, 0)
@@ -60,7 +60,7 @@ shape = SubResource("RectangleShape2D_tv06q")
 [node name="SpawnerRight" type="Marker2D" parent="."]
 position = Vector2(1626, 552)
 
-[node name="enemy" parent="." instance=ExtResource("4_dql4g")]
-position = Vector2(1195, 507)
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_dql4g")]
+position = Vector2(1269, 502)
 
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]

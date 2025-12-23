@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct7p06r0bcx08"]
+
+[ext_resource type="PackedScene" uid="uid://bssw6l8yhu13w" path="res://scenes/enemy_scenes/Enemy.tscn" id="1_x77ld"]
+[ext_resource type="Script" uid="uid://34f17bpejjs5" path="res://script/touch_enemy.gd" id="2_n83ry"]
+
+[node name="CharacterBody2D" instance=ExtResource("1_x77ld")]
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-1.1875, 2.625)
+
+[node name="Area2D" parent="." index="2"]
+script = ExtResource("2_n83ry")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 6)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
