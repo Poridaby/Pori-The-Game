@@ -5,7 +5,6 @@ class_name Player
 var next_spawn_name: String = ""
 
 func _ready():
-	load_stats()
 	if global_var.next_spawn_name != "":
 		var spawner = get_tree().current_scene.get_node(global_var.next_spawn_name)
 		global_position = spawner.global_position
@@ -13,8 +12,7 @@ func _ready():
 		global_var.next_spawn_name = ""  # reset
 
 
-func _exit_tree():
-	save_stats()
+
 
 func _physics_process(_delta):
 	"""
@@ -57,39 +55,3 @@ func _physics_process(_delta):
 
 	else:
 		$AnimatedSprite2D.stop()
-
-# Système de sauvegarde
-func load_stats():
-	"""
-	charge les stats
-	:comportement: charge les stats du joueur depuis le json
-	"""
-	#si la save n'existe pas, garde les valeurs par défaut
-	if not FileAccess.file_exists("user://player_stats.json"):
-		return
-
-	#Récupère le contenu du json
-	var file := FileAccess.open("user://player_stats.json", FileAccess.READ)
-	var content := file.get_as_text()
-	file.close()
-
-	#Converti le contenu en dict
-	var data = JSON.parse_string(content)
-	if typeof(data) == TYPE_DICTIONARY:
-		statis.stats = data
-
-
-func save_stats():
-	"""
-	Sauvegarde les stats
-	:comportement: sauvegarde dans un json les stats du joueur
-	"""
-	#Crée ou ouvre le fichier de save
-	var file := FileAccess.open("user://player_stats.json", FileAccess.WRITE)
-	if file == null:
-		return
-
-	#Edite le fichier de sauvegarde
-	var json_string := JSON.stringify(.stats)
-	file.store_string(json_string)
-	file.close()
