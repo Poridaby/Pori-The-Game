@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bl1hn5uijamw" path="res://objet/enemie.png" id="1_3gvst"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpr68"]
-size = Vector2(91, 80.375)
+size = Vector2(68.15625, 54.28125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55jtl"]
 size = Vector2(90.5, 80)
