@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://be0cbrh4ogbni"]
 
 [ext_resource type="Texture2D" uid="uid://by4a0h0vfxpqb" path="res://objet/paneau.png" id="1_v3wuo"]
-[ext_resource type="Script" uid="uid://bauli5shx30di" path="res://script/interact panneau.gd" id="2_6uctv"]
+[ext_resource type="Script" uid="uid://bauli5shx30di" path="res://script/dialog_box_script/interact panneau.gd" id="2_6uctv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7n8k6"]
 size = Vector2(341.51862, 169.1173)

@@ -10,7 +10,10 @@ func _on_exit_body_entered(body):
 	"""
 	if body is Player:
 		global_var.next_spawn_name = "SpawnerLeft"
-		get_tree().change_scene_to_file("res://scenes/plaine.tscn")
+		call_deferred("_go_to_plaine")
+		
+func _go_to_plaine():
+	get_tree().change_scene_to_file("res://scenes/décor_explo/plaine.tscn")
 
 func _on_exit_left_body_entered(body):
 	"""
@@ -19,4 +22,7 @@ func _on_exit_left_body_entered(body):
 	"""
 	if body is Player:
 		global_var.next_spawn_name = "SpawnerRight"
-		get_tree().change_scene_to_file("res://scenes/Inser_ellenon.tscn")
+		call_deferred("_go_to_Inser_ellenon")
+		
+func _go_to_Inser_ellenon():
+	get_tree().change_scene_to_file("res://scenes/décor_explo/Inser_ellenon.tscn")

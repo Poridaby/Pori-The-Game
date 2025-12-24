@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dl5i0k5vgw0eb"]
 
 [ext_resource type="Texture2D" uid="uid://bl1hn5uijamw" path="res://objet/enemie.png" id="1_47fcc"]
-[ext_resource type="Script" uid="uid://bmp4dnumldap1" path="res://script/ptitcrote_fight.gd" id="1_vtm0l"]
+[ext_resource type="Script" uid="uid://bmp4dnumldap1" path="res://script/enemy_script/ptitcrote_stats.gd" id="1_vtm0l"]
 
 [node name="Node2D" type="Node2D"]
 

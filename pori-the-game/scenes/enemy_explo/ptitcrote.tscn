@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ct7p06r0bcx08"]
 
-[ext_resource type="PackedScene" uid="uid://bssw6l8yhu13w" path="res://scenes/enemy_scenes/Enemy.tscn" id="1_x77ld"]
-[ext_resource type="Script" uid="uid://34f17bpejjs5" path="res://script/touch_enemy.gd" id="2_n83ry"]
+[ext_resource type="PackedScene" uid="uid://bssw6l8yhu13w" path="res://scenes/enemy_explo/Enemy.tscn" id="1_x77ld"]
+[ext_resource type="Script" uid="uid://34f17bpejjs5" path="res://script/warp_script/touch_enemy.gd" id="2_n83ry"]
 
 [node name="CharacterBody2D" instance=ExtResource("1_x77ld")]
 
