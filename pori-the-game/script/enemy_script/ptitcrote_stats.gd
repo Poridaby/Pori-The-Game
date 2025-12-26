@@ -13,7 +13,7 @@ func _ready():
 	stats.pm_max = 10
 	stats.atk = 6
 	stats.def = 4
-	stats.spd = 11
+	stats.spd = 8
 	stats.pierre = 9
 	stats.pv = stats.pv_max
 	stats.pm = stats.pm_max

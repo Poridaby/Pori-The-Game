@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ciy5g07bh23mv" path="res://objet/player_fight_state.png" id="1_qwh4j"]
 [ext_resource type="Script" uid="uid://ci6edhuxgnt0r" path="res://script/persos_script/Tonar_stats.gd" id="1_s6sps"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Tonar" type="Node2D"]
 
 [node name="PersoAI" type="Node" parent="."]
 
