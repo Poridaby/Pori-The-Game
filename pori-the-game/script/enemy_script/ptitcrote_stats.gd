@@ -1,4 +1,5 @@
 extends Node
+class_name Ptitcrote
 
 @export var stats: Stats
 

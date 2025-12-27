@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dm6g17dqct7ip"]
+[gd_scene load_steps=7 format=3 uid="uid://dm6g17dqct7ip"]
 
+[ext_resource type="Script" uid="uid://bxx5v3pniow3e" path="res://script/combat_script/combat.gd" id="1_y7dlq"]
 [ext_resource type="Texture2D" uid="uid://du66nyjjny5ve" path="res://objet/New_Piskel.png" id="2_ltln3"]
 [ext_resource type="Script" uid="uid://dgv8bxgitmt86" path="res://script/combat_script/controle.gd" id="3_j4a54"]
 [ext_resource type="Texture2D" uid="uid://cohebqbv2wfc4" path="res://objet/boite de dialogue.png" id="4_ekc3o"]
@@ -7,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dfnxr7dtt2abm" path="res://scenes/Perso_fight/Tonar_fight.tscn" id="6_aoix4"]
 
 [node name="Combat" type="Node2D"]
+script = ExtResource("1_y7dlq")
 
 [node name="NewPiskel" type="Sprite2D" parent="."]
 position = Vector2(997.99994, 80)
@@ -16,8 +18,10 @@ texture = ExtResource("2_ltln3")
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 98.0
+offset_top = -81.0
+offset_right = 138.0
+offset_bottom = -41.0
 script = ExtResource("3_j4a54")
 
 [node name="BoiteDeDialogue" type="Sprite2D" parent="."]
@@ -29,5 +33,4 @@ texture = ExtResource("4_ekc3o")
 [node name="Node2D" parent="." instance=ExtResource("5_ynyq5")]
 position = Vector2(1544, 445)
 
-[node name="Player" parent="." instance=ExtResource("6_aoix4")]
-position = Vector2(334, 220)
+[node name="Tonar" parent="." instance=ExtResource("6_aoix4")]
