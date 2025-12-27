@@ -30,7 +30,6 @@ position = Vector2(958.99994, 869.99994)
 scale = Vector2(19.210001, 6.1875)
 texture = ExtResource("4_ekc3o")
 
-[node name="Node2D" parent="." instance=ExtResource("5_ynyq5")]
-position = Vector2(1544, 445)
-
 [node name="Tonar" parent="." instance=ExtResource("6_aoix4")]
+
+[node name="Enemy" parent="." instance=ExtResource("5_ynyq5")]
