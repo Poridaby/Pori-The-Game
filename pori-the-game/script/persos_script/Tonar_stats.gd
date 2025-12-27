@@ -1,4 +1,5 @@
 extends Node
+class_name Tonar
 
 @export var stats: Stats
 

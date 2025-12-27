@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dl5i0k5vgw0eb" path="res://scenes/enemy_fight/Enemy_fight.tscn" id="5_ynyq5"]
 [ext_resource type="PackedScene" uid="uid://dfnxr7dtt2abm" path="res://scenes/Perso_fight/Tonar_fight.tscn" id="6_aoix4"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Combat" type="Node2D"]
 
 [node name="NewPiskel" type="Sprite2D" parent="."]
 position = Vector2(997.99994, 80)
