@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dm6g17dqct7ip"]
+[gd_scene load_steps=10 format=3 uid="uid://dm6g17dqct7ip"]
 
 [ext_resource type="Script" uid="uid://bxx5v3pniow3e" path="res://script/combat_script/combat.gd" id="1_y7dlq"]
 [ext_resource type="Texture2D" uid="uid://du66nyjjny5ve" path="res://objet/New_Piskel.png" id="2_ltln3"]
 [ext_resource type="Script" uid="uid://dgv8bxgitmt86" path="res://script/combat_script/controle.gd" id="3_j4a54"]
-[ext_resource type="Texture2D" uid="uid://cohebqbv2wfc4" path="res://objet/boite de dialogue.png" id="4_ekc3o"]
+[ext_resource type="Texture2D" uid="uid://yuxbi15fm8p7" path="res://objet/boutton_attack.png" id="4_ekc3o"]
+[ext_resource type="Texture2D" uid="uid://bt1rqnuq61f74" path="res://objet/boutton_special.png" id="5_aoix4"]
 [ext_resource type="PackedScene" uid="uid://dl5i0k5vgw0eb" path="res://scenes/enemy_fight/Enemy_fight.tscn" id="5_ynyq5"]
 [ext_resource type="PackedScene" uid="uid://dfnxr7dtt2abm" path="res://scenes/Perso_fight/Tonar_fight.tscn" id="6_aoix4"]
+[ext_resource type="Texture2D" uid="uid://cw6g5pykob157" path="res://objet/boutton_soin.png" id="6_xgstd"]
+[ext_resource type="Texture2D" uid="uid://cc48d0i2i47uo" path="res://objet/boutton_fuir.png" id="7_n0ibx"]
 
 [node name="Combat" type="Node2D"]
 script = ExtResource("1_y7dlq")
@@ -20,16 +23,67 @@ layout_mode = 3
 anchors_preset = 0
 offset_left = 98.0
 offset_top = -81.0
-offset_right = 138.0
-offset_bottom = -41.0
+offset_right = 129.0
+offset_bottom = -63.0
 script = ExtResource("3_j4a54")
 
-[node name="BoiteDeDialogue" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(958.99994, 869.99994)
-scale = Vector2(19.210001, 6.1875)
-texture = ExtResource("4_ekc3o")
+[node name="attack" type="Button" parent="HUD"]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 921.0
+offset_right = 888.0
+offset_bottom = 1129.0
+action_mode = 0
+icon = ExtResource("4_ekc3o")
+icon_alignment = 1
 
-[node name="Tonar" parent="." instance=ExtResource("6_aoix4")]
+[node name="Special" type="Button" parent="HUD"]
+layout_mode = 0
+offset_left = 956.0
+offset_top = 921.0
+offset_right = 1164.0
+offset_bottom = 1129.0
+icon = ExtResource("5_aoix4")
+
+[node name="Health" type="Button" parent="HUD"]
+layout_mode = 0
+offset_left = 1225.0
+offset_top = 922.0
+offset_right = 1433.0
+offset_bottom = 1130.0
+icon = ExtResource("6_xgstd")
+
+[node name="Run" type="Button" parent="HUD"]
+layout_mode = 0
+offset_left = 1491.0
+offset_top = 922.0
+offset_right = 1699.0
+offset_bottom = 1130.0
+button_mask = 0
+icon = ExtResource("7_n0ibx")
+
+[node name="submenu" type="Control" parent="."]
+layout_mode = 3
+offset_left = 724.0
+offset_top = -121.0
+offset_right = 801.0
+offset_bottom = -72.0
+
+[node name="attack_1" type="Button" parent="submenu"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 963.0
+offset_right = 264.0
+offset_bottom = 1170.0
+text = "attaque 1"
+
+[node name="Tonar" parent="submenu" instance=ExtResource("6_aoix4")]
+position = Vector2(-443, 294)
 
 [node name="Enemy" parent="." instance=ExtResource("5_ynyq5")]
+
+[connection signal="pressed" from="HUD/attack" to="HUD" method="_on_attack_pressed"]
+[connection signal="pressed" from="HUD/Special" to="HUD" method="_on_special_pressed"]
+[connection signal="pressed" from="HUD/Health" to="HUD" method="_on_health_pressed"]
+[connection signal="pressed" from="HUD/Run" to="HUD" method="_on_run_pressed"]
+[connection signal="pressed" from="submenu/attack_1" to="HUD" method="_on_attack_1_pressed"]
