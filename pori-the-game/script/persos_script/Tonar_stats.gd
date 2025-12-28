@@ -1,5 +1,5 @@
 extends Node
-class_name TonarStats
+class_name Fighter
 
 @export var stats: Stats
 
@@ -14,7 +14,7 @@ func _ready():
 	stats.pm_max = 12
 	stats.atk = 11
 	stats.def = 9
-	stats.spd = 11
+	stats.spd = 8
 	stats.pierre = 6
 	stats.pv = stats.pv_max
 	stats.pm = stats.pm_max

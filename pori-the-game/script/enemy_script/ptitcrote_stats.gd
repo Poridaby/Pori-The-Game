@@ -1,5 +1,5 @@
 extends Node
-class_name Ptitcrote
+class_name Mob
 
 @export var stats: Stats
 
@@ -14,7 +14,7 @@ func _ready():
 	stats.pm_max = 10
 	stats.atk = 6
 	stats.def = 4
-	stats.spd = 8
+	stats.spd = 7
 	stats.pierre = 9
 	stats.pv = stats.pv_max
 	stats.pm = stats.pm_max
