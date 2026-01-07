@@ -64,6 +64,7 @@ icon = ExtResource("7_n0ibx")
 
 [node name="submenu" type="Control" parent="."]
 layout_mode = 3
+anchors_preset = 0
 offset_left = 724.0
 offset_top = -121.0
 offset_right = 801.0

@@ -14,7 +14,8 @@ func _on_attack_pressed():
 	attack_select.grab_focus()
 	
 func _on_attack_1_pressed():
-	print("OOOUUUUUHHH ça doit faire mal")
+	var multi = 1
+	hud_node.damage_to_enemy(multi)
 	
 func _on_special_pressed():
 	print("choisi ton attaque spécial fdp")
