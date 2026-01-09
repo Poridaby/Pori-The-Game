@@ -2,17 +2,17 @@ extends CharacterBody2D
 class_name Player
 
 @export var speed = 400
+@export var stats: Stats
+var runtime_stats: Stats
 var next_spawn_name: String = ""
 
 func _ready():
+	runtime_stats = stats.duplicate(true)
 	if global_var.next_spawn_name != "":
 		var spawner = get_tree().current_scene.get_node(global_var.next_spawn_name)
 		global_position = spawner.global_position
 		velocity = Vector2.ZERO
 		global_var.next_spawn_name = ""  # reset
-
-
-
 
 func _physics_process(_delta):
 	"""

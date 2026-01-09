@@ -8,6 +8,7 @@ class_name Stats
 @export var def: int = 1
 @export var spd: int = 1
 @export var pierre: int = 9
+@export var battle_sprite: Texture2D
 
 var pv: int
 var pm: int
