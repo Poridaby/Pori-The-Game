@@ -78,13 +78,20 @@ offset_right = 264.0
 offset_bottom = 1170.0
 text = "attaque 1"
 
-[node name="Tonar" parent="submenu" instance=ExtResource("6_aoix4")]
-position = Vector2(-443, 294)
+[node name="pass" type="Button" parent="submenu"]
+layout_mode = 0
+offset_left = 865.0
+offset_top = 962.0
+offset_right = 1073.0
+offset_bottom = 1170.0
 
 [node name="Enemy" parent="." instance=ExtResource("5_ynyq5")]
+
+[node name="Tonar" parent="." instance=ExtResource("6_aoix4")]
 
 [connection signal="pressed" from="HUD/attack" to="HUD" method="_on_attack_pressed"]
 [connection signal="pressed" from="HUD/Special" to="HUD" method="_on_special_pressed"]
 [connection signal="pressed" from="HUD/Health" to="HUD" method="_on_health_pressed"]
 [connection signal="pressed" from="HUD/Run" to="HUD" method="_on_run_pressed"]
 [connection signal="pressed" from="submenu/attack_1" to="HUD" method="_on_attack_1_pressed"]
+[connection signal="pressed" from="submenu/pass" to="HUD" method="_on_pass_pressed"]

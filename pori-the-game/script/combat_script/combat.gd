@@ -50,7 +50,12 @@ func crit():
 	return rng.randf() < crit_chance # déclenche la chance de critique
 
 func damage_to_enemy(multi):
+	# Calcul les dégâts subit par l'ennemi et vérifie si il est mort et si il doit subir un crit
 	var dmg = (tonar_stats.stats.atk - enemy_stats.stats.def) * multi
 	if crit():
 		dmg = int(dmg * 1.5)
-	print("il se prends ", dmg," de dégats dans sa gueule !")
+	enemy_stats.stats.pv -= dmg
+	if enemy_stats.stats.pv <= 0:
+		print("ENNEMI VAINCU MOTHERFUCKER")
+	else:
+		print("OOOUUUUFFF CA DOIT FAIRE MAL")
