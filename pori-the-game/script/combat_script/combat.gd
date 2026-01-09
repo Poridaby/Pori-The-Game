@@ -30,6 +30,8 @@ func _ready():
 	# Intance les scenes au tree
 	add_child(tonar_instance)
 	add_child(enemy_instance)
+	tonar_instance.visible = false
+	enemy_instance.visible = false
 	
 	if tonar_stats.stats.spd > enemy_stats.stats.spd:
 		turn_player()

@@ -1,7 +1,6 @@
 extends Control
 
 @onready var hud_node = get_node("/root/Combat")
-var waiting_for_space = false
 var tonar_scene = preload("res://scenes/Perso_fight/Tonar_fight.tscn")
 var tonar_instance = tonar_scene.instantiate()
 var enemy_scene = preload("res://scenes/enemy_fight/Enemy_fight.tscn")
@@ -15,6 +14,8 @@ func _ready():
 	# Intance les scenes au tree
 	add_child(tonar_instance)
 	add_child(enemy_instance)
+	tonar_instance.visible = false
+	enemy_instance.visible = false
 
 func select_action_player():
 	# permet de naviguer entre les différentes actions
