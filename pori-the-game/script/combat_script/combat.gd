@@ -4,12 +4,10 @@ extends Node2D
 @onready var sub = $submenu
 var rng := RandomNumberGenerator.new()
 
-# Récup Tonar_stats et les stats de l'ennemid
-# Récupère les stats clonées
-var tonar = BattleManager.current_player
-var tonar_stats = tonar.runtime_stats
-var enemy_stats = BattleManager.current_enemy_stats
-
+# Récup Tonar_stats et les stats de l'ennemi
+var tonar_stats: Stats
+var enemy_stats: Stats
+	
 func turn_player():
 	# Rend visible l'HUD et lance la fonction de sélection d'action
 	hud.visible = true
@@ -21,21 +19,25 @@ func turn_enemy():
 	# Rend invisible l'HUD et lance la fonction d'action de l'ennemi
 	hud.visible = false
 	hud.select_action_enemy()
-	
 
 func _ready():
 	rng.randomize() 
 	hud.visible = false
 	sub.visible = false
 	
-	if tonar == null:
-		push_error("Le joueur n'a pas été instancié !")
-		return
+	# Charge les stats des combattants
+	enemy_stats = BattleManager.enemy_runtime_stats
+	tonar_stats = BattleManager.player_runtime_stats
 	
+	tonar_stats.pv = tonar_stats.pv_max
+	enemy_stats.pv = enemy_stats.pv_max
 	
-	# Assignation des sprites (exemple)
-	$TonarSprite.texture = tonar_stats.battle_sprite  # tu peux utiliser un sprite propre
-	$EnemySprite.texture = enemy_stats.battle_sprite  # ou enemy_stats.battle_sprite
+	print(enemy_stats.pv)
+	print(tonar_stats.pv)
+	
+	# Assigne les sprites de combats
+	$EnemySprite.texture = enemy_stats.battle_sprite
+	$TonarSprite.texture = tonar_stats.battle_sprite
 	
 	if tonar_stats.spd > enemy_stats.spd:
 		turn_player()

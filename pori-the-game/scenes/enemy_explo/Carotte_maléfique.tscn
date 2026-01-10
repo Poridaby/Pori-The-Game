@@ -7,9 +7,10 @@
 
 [sub_resource type="Resource" id="Resource_wy3v6"]
 script = ExtResource("4_ukw3f")
+name = "Carotte Maléfique"
 pv_max = 11
-atk = 6
-def = 4
+atk = 4
+def = 2
 spd = 7
 pierre = 3
 battle_sprite = ExtResource("2_6lby2")
@@ -23,7 +24,7 @@ texture = ExtResource("2_6lby2")
 
 [node name="Area2D" parent="." index="2"]
 script = ExtResource("3_deb62")
-stats = SubResource("Resource_wy3v6")
+base_stats = SubResource("Resource_wy3v6")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(1.2357025, -4.113205)

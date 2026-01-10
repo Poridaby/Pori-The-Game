@@ -90,7 +90,9 @@ scale = Vector2(6.855, 6.855)
 flip_h = true
 
 [node name="TonarSprite" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(273.18, 216.27)
+scale = Vector2(9.355, 9.355)
 
 [connection signal="pressed" from="HUD/attack" to="HUD" method="_on_attack_pressed"]
 [connection signal="pressed" from="HUD/Special" to="HUD" method="_on_special_pressed"]

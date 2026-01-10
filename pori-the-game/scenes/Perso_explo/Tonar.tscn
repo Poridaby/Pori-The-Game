@@ -1,17 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://ob8ee2f8nyuc"]
+[gd_scene load_steps=9 format=3 uid="uid://ob8ee2f8nyuc"]
 
 [ext_resource type="Script" uid="uid://cg4ju44ncntj4" path="res://script/persos_script/Tonar.gd" id="1_n1u3g"]
 [ext_resource type="Texture2D" uid="uid://dngcw7yat7cp2" path="res://objet/Poridaby_face_marche1.png" id="2_n4q3y"]
 [ext_resource type="Texture2D" uid="uid://buwvslan7ffjc" path="res://objet/Poridaby_face_marche2.png" id="3_ifgp5"]
 [ext_resource type="Texture2D" uid="uid://bkd5kc4tsys8" path="res://objet/Poridaby_face_marche3.png" id="4_5b4u4"]
 [ext_resource type="PackedScene" uid="uid://cpkhdgwavmpuc" path="res://scenes/HUD/panneau_dialogue.tscn" id="5_4nhif"]
-[ext_resource type="Texture2D" uid="uid://ciy5g07bh23mv" path="res://objet/player_fight_state.png" id="7_vdm0i"]
-[ext_resource type="Script" uid="uid://x40isc0mxtcj" path="res://script/class_script/stats.gd" id="8_8d3xj"]
-
-[sub_resource type="Resource" id="Resource_qntjm"]
-script = ExtResource("8_8d3xj")
-battle_sprite = ExtResource("7_vdm0i")
-metadata/_custom_type_script = "uid://x40isc0mxtcj"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4q3y"]
 size = Vector2(38, 41)
@@ -47,7 +40,6 @@ animations = [{
 texture_filter = 1
 position = Vector2(910.59, 534)
 script = ExtResource("1_n1u3g")
-stats = SubResource("Resource_qntjm")
 metadata/_edit_horizontal_guides_ = [-137.0, -206.0]
 metadata/_edit_group_ = true
 
