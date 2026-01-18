@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dygsd87v3m7t4"]
+[gd_scene load_steps=13 format=3 uid="uid://dygsd87v3m7t4"]
 
 [ext_resource type="Script" uid="uid://bkm3aafrxcd2t" path="res://script/warp_script/warp.gd" id="1_8bl4t"]
 [ext_resource type="PackedScene" uid="uid://be0cbrh4ogbni" path="res://scenes/Objets/panneau.tscn" id="2_qo2l3"]
 [ext_resource type="PackedScene" uid="uid://ob8ee2f8nyuc" path="res://scenes/Perso_explo/Tonar.tscn" id="3_0oat6"]
 [ext_resource type="PackedScene" uid="uid://ct7p06r0bcx08" path="res://scenes/enemy_explo/ptitcrote.tscn" id="4_7oamr"]
+[ext_resource type="Resource" uid="uid://whudlq5kq5v6" path="res://script/dialog_box_script/dialogues/test_panneau_1.tres" id="4_beao6"]
+[ext_resource type="Resource" uid="uid://c1yqbnap2q4d8" path="res://script/dialog_box_script/dialogues/test_dialogue_2.tres" id="5_pvpg1"]
 [ext_resource type="PackedScene" uid="uid://wghtx6lijqrb" path="res://scenes/enemy_explo/Carotte_maléfique.tscn" id="5_qo2l3"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_tbgi4"]
@@ -29,6 +31,11 @@ script = ExtResource("1_8bl4t")
 
 [node name="Panneau" parent="." instance=ExtResource("2_qo2l3")]
 position = Vector2(575, 517)
+dialogue = ExtResource("4_beao6")
+
+[node name="Panneau2" parent="." instance=ExtResource("2_qo2l3")]
+position = Vector2(576, 365)
+dialogue = ExtResource("5_pvpg1")
 
 [node name="Joueur_P" parent="." instance=ExtResource("3_0oat6")]
 position = Vector2(900, 512)
