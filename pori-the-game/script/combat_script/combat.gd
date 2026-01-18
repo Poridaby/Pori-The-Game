@@ -3,6 +3,8 @@ extends Node2D
 @onready var hud = $HUD
 @onready var sub = $submenu
 var rng := RandomNumberGenerator.new()
+var participants := []
+var current_index := 0
 
 # Récup Tonar_stats et les stats de l'ennemi
 var tonar_stats: Stats
@@ -10,7 +12,19 @@ var enemy_stats: Stats
 
 #Récup les attaques des combattants
 var enemy_attack: Attack
-	
+
+func start_battle():
+	if tonar_stats.spd > enemy_stats.spd:
+		turn_player()
+	elif tonar_stats.spd < enemy_stats.spd:
+		turn_enemy()
+	else:
+		var turns = [
+			Callable(self, "turn_player"),
+			Callable(self, "turn_enemy")
+		]
+		turns.pick_random().call()
+
 func turn_player():
 	# Rend visible l'HUD et lance la fonction de sélection d'action
 	hud.visible = true
@@ -43,18 +57,9 @@ func _ready():
 	# Assigne les sprites de combats
 	$EnemySprite.texture = enemy_stats.battle_sprite
 	$TonarSprite.texture = tonar_stats.battle_sprite
-	
-	if tonar_stats.spd > enemy_stats.spd:
-		turn_player()
-	elif tonar_stats.spd < enemy_stats.spd:
-		turn_enemy()
-	else:
-		var turns = [
-			Callable(self, "turn_player"),
-			Callable(self, "turn_enemy")
-		]
-		turns.pick_random().call()
 
+	start_battle()
+	
 func crit():
 	var base_chance = 0.05  # 5% de base
 	var scaling = 0.01      # +1% par point de stat
