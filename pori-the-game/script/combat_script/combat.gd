@@ -17,11 +17,13 @@ func turn_player():
 	sub.visible = false
 	hud.select_action_player()
 	
-	
 func turn_enemy():
 	# Rend invisible l'HUD et lance la fonction d'action de l'ennemi
 	hud.visible = false
-	hud.select_action_enemy()
+	var attack = enemy_attack
+	
+	attack.finished.connect(_on_action_finished, CONNECT_ONE_SHOT)
+	attack.execute()
 
 func _ready():
 	rng.randomize() 
@@ -71,7 +73,7 @@ func damage_to_enemy(multi):
 	else:
 		print("OOOUUUUFFF CA DOIT FAIRE MAL ")
 		
-func damage_to_player(multi):
+func damage_to_player():
 	#Calcul les dégâts que le joueur va subir en fonction des attaques de l'ennemi
 	var dmg = (enemy_stats.atk - tonar_stats.def) * enemy_attack.multi
 	tonar_stats.pv -= dmg
@@ -79,6 +81,12 @@ func damage_to_player(multi):
 		print("BAAAHHH LA MERDE IL EST MORT")
 	else:
 		print("Ah bah oui ça fait bobo")
+		
+func _on_action_finished():
+	next_turn()
+	
+func next_turn():
+	print("prochain tour")
 		
 func end_or_not():
 	if enemy_stats.pv <= 0:

@@ -29,7 +29,7 @@ func _on_run_pressed():
 	print("BAAAHHH LE NULOS IL FUIT")
 	
 func select_action_enemy():
-	print("l'aléatoire fera les choses")
+	hud_node.damage_to_player()
 
 func _on_pass_pressed():
 	hud_node.end_or_not()
