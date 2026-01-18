@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://c1yqbnap2q4d8"]
+
+[ext_resource type="Script" uid="uid://b2rrlxqfa5e61" path="res://script/dialog_box_script/Dialogue.gd" id="1_4jdw2"]
+
+[resource]
+script = ExtResource("1_4jdw2")
+text = "je ne suis pas un panneau !"
+metadata/_custom_type_script = "uid://b2rrlxqfa5e61"

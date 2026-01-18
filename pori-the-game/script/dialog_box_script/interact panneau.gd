@@ -4,6 +4,8 @@ extends Area2D
 var joueur_in_range = false
 var in_interact = false
 @onready var sprite = $/root/Main/Joueur_P/Panneau
+@onready var owner_node := get_parent()
+
 
 func _ready():
 	"""
@@ -22,7 +24,7 @@ func _process(_delta):
 	# Affiche le panneau quand l'utilisateur interagit dans la portée
 	if overlaps_body($/root/Main/Joueur_P) and Input.is_action_just_pressed("interact") and not in_interact:
 		global_var.player_can_move = false
-		global_var.texte_dialogue = "Je suis un panneau !"
+		global_var.texte_dialogue = owner_node.dialogue.text
 		sprite.visible = true
 		await get_tree().create_timer(0.5).timeout
 		in_interact = true

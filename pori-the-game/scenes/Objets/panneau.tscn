@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://be0cbrh4ogbni"]
+[gd_scene load_steps=6 format=3 uid="uid://be0cbrh4ogbni"]
 
 [ext_resource type="Texture2D" uid="uid://by4a0h0vfxpqb" path="res://objet/paneau.png" id="1_v3wuo"]
 [ext_resource type="Script" uid="uid://bauli5shx30di" path="res://script/dialog_box_script/interact panneau.gd" id="2_6uctv"]
+[ext_resource type="Script" uid="uid://psowp6mrt7lb" path="res://script/dialog_box_script/panneau_var.gd" id="2_8qi1j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7n8k6"]
 size = Vector2(341.51862, 169.1173)
@@ -13,6 +14,7 @@ size = Vector2(624.8237, 464.0891)
 position = Vector2(-1.1920929e-07, -1.1368684e-13)
 scale = Vector2(0.25767267, 0.25426137)
 texture = ExtResource("1_v3wuo")
+script = ExtResource("2_8qi1j")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
