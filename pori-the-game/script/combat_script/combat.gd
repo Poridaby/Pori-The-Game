@@ -9,7 +9,7 @@ var tonar_stats: Stats
 var enemy_stats: Stats
 
 #Récup les attaques des combattants
-var enemy_attack: Array[Attack]
+var enemy_attack: Attack
 	
 func turn_player():
 	# Rend visible l'HUD et lance la fonction de sélection d'action

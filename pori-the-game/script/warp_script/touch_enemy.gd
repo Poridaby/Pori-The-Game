@@ -2,7 +2,7 @@ extends Area2D
 class_name Enemy
 
 @export var base_stats: Stats
-@export var attacks: Array[Attack]
+@export var attacks: Attack
 
 func _on_body_entered(body):
 	if body is Player:
