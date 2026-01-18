@@ -89,7 +89,9 @@ position = Vector2(1647.24, 501.395)
 scale = Vector2(6.855, 6.855)
 flip_h = true
 
-[node name="TonarSprite" type="Sprite2D" parent="."]
+[node name="player" type="Sprite2D" parent="."]
+
+[node name="TonarSprite" type="Sprite2D" parent="player"]
 texture_filter = 1
 position = Vector2(273.18, 216.27)
 scale = Vector2(9.355, 9.355)

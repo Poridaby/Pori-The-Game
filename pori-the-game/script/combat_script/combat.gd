@@ -14,6 +14,12 @@ var enemy_stats: Stats
 var enemy_attack: Attack
 
 func start_battle():
+	participants.append($EnemySprite)
+	
+	var player_sprite = $player.get_children()
+	for player in player_sprite:
+		participants.append(player)
+	
 	if tonar_stats.spd > enemy_stats.spd:
 		turn_player()
 	elif tonar_stats.spd < enemy_stats.spd:
@@ -56,7 +62,7 @@ func _ready():
 	
 	# Assigne les sprites de combats
 	$EnemySprite.texture = enemy_stats.battle_sprite
-	$TonarSprite.texture = tonar_stats.battle_sprite
+	$player/TonarSprite.texture = tonar_stats.battle_sprite
 
 	start_battle()
 	
