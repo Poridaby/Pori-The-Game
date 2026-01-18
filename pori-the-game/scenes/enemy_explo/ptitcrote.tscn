@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://ct7p06r0bcx08"]
+[gd_scene load_steps=10 format=3 uid="uid://ct7p06r0bcx08"]
 
 [ext_resource type="PackedScene" uid="uid://bssw6l8yhu13w" path="res://scenes/enemy_explo/Enemy.tscn" id="1_x77ld"]
 [ext_resource type="Texture2D" uid="uid://cvr5pl8jlh3a8" path="res://objet/ptitecrote_map.png" id="2_c3r5j"]
 [ext_resource type="Script" uid="uid://34f17bpejjs5" path="res://script/warp_script/touch_enemy.gd" id="2_n83ry"]
 [ext_resource type="Texture2D" uid="uid://bl1hn5uijamw" path="res://objet/enemie.png" id="3_evxox"]
 [ext_resource type="Script" uid="uid://x40isc0mxtcj" path="res://script/class_script/stats.gd" id="3_slwik"]
+[ext_resource type="Script" uid="uid://7qvfyw3p2u8" path="res://script/class_script/attack.gd" id="6_emv5n"]
+[ext_resource type="Script" uid="uid://dwks8wmtpd5yl" path="res://script/enemy_script/ptitecrote_attack.gd" id="7_iu0t2"]
 
 [sub_resource type="Resource" id="Resource_c3r5j"]
 script = ExtResource("3_slwik")
@@ -17,6 +19,11 @@ spd = 6
 pierre = 4
 battle_sprite = ExtResource("3_evxox")
 metadata/_custom_type_script = "uid://x40isc0mxtcj"
+
+[sub_resource type="Resource" id="Resource_gdwcw"]
+script = ExtResource("7_iu0t2")
+name = "Charge"
+metadata/_custom_type_script = "uid://dwks8wmtpd5yl"
 
 [node name="CharacterBody2D" instance=ExtResource("1_x77ld")]
 
@@ -31,6 +38,7 @@ position = Vector2(-3, 5)
 [node name="Area2D" parent="." index="2"]
 script = ExtResource("2_n83ry")
 base_stats = SubResource("Resource_c3r5j")
+attacks = Array[ExtResource("6_emv5n")]([SubResource("Resource_gdwcw")])
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(-2, 4)

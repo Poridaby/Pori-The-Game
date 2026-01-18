@@ -7,6 +7,9 @@ var rng := RandomNumberGenerator.new()
 # Récup Tonar_stats et les stats de l'ennemi
 var tonar_stats: Stats
 var enemy_stats: Stats
+
+#Récup les attaques des combattants
+var enemy_attack: Array[Attack]
 	
 func turn_player():
 	# Rend visible l'HUD et lance la fonction de sélection d'action
@@ -29,11 +32,11 @@ func _ready():
 	enemy_stats = BattleManager.enemy_runtime_stats
 	tonar_stats = BattleManager.player_runtime_stats
 	
+	#Charge les attaques des combattants
+	enemy_attack = BattleManager.enemy_runtime_attack
+	
 	tonar_stats.pv = tonar_stats.pv_max
 	enemy_stats.pv = enemy_stats.pv_max
-	
-	print(enemy_stats.pv)
-	print(tonar_stats.pv)
 	
 	# Assigne les sprites de combats
 	$EnemySprite.texture = enemy_stats.battle_sprite
@@ -66,7 +69,16 @@ func damage_to_enemy(multi):
 	if enemy_stats.pv <= 0:
 		print("ENNEMI VAINCU MOTHERFUCKER")
 	else:
-		print("OOOUUUUFFF CA DOIT FAIRE MAL ", enemy_stats.pv)
+		print("OOOUUUUFFF CA DOIT FAIRE MAL ")
+		
+func damage_to_player(multi):
+	#Calcul les dégâts que le joueur va subir en fonction des attaques de l'ennemi
+	var dmg = (enemy_stats.atk - tonar_stats.def) * enemy_attack.multi
+	tonar_stats.pv -= dmg
+	if tonar_stats.pv <= 0:
+		print("BAAAHHH LA MERDE IL EST MORT")
+	else:
+		print("Ah bah oui ça fait bobo")
 		
 func end_or_not():
 	if enemy_stats.pv <= 0:
