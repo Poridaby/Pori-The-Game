@@ -8,8 +8,8 @@ func select_action_player():
 
 func _on_attack_pressed():
 	hud_node.hud.visible = false
-	hud_node.sub.visible = true
-	$"../submenu/pass".visible = false
+	$"../submenu".visible = true
+	$"../submenu/attack_1".visible = true
 	$"../submenu/attack_1".grab_focus()
 	
 func _on_attack_1_pressed():

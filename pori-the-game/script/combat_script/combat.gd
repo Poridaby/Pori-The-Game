@@ -14,6 +14,7 @@ var enemy_stats: Stats
 var enemy_attack: Attack
 
 func start_battle():
+	# Ajoute les combattants dans une liste et choisi qui attaque au début du combat en fonction de la stat de vitesse
 	participants.append($EnemySprite)
 	
 	var player_sprite = $player.get_children()
@@ -21,20 +22,21 @@ func start_battle():
 		participants.append(player)
 	
 	if tonar_stats.spd > enemy_stats.spd:
-		turn_player()
+		current_index = 1
+		next_turn()
 	elif tonar_stats.spd < enemy_stats.spd:
-		turn_enemy()
+		current_index = 0
+		next_turn()
 	else:
-		var turns = [
-			Callable(self, "turn_player"),
-			Callable(self, "turn_enemy")
-		]
-		turns.pick_random().call()
+		current_index = randi_range(0, 1)
+		next_turn()
 
 func turn_player():
 	# Rend visible l'HUD et lance la fonction de sélection d'action
 	hud.visible = true
-	sub.visible = false
+	sub.visible = true
+	$submenu/attack_1.visible = false
+	$submenu/pass.visible = false
 	hud.select_action_player()
 	
 func turn_enemy():
@@ -94,15 +96,28 @@ func damage_to_player():
 		print("Ah bah oui ça fait bobo ", tonar_stats.pv)
 		
 func _on_action_finished():
+	# Fait subir les dégats au joueur et change de tour
 	damage_to_player()
 	next_turn()
 	
 func next_turn():
-	print("prochain tour")
+	# Permet de savoir à qui est le tour en assignant le numéro de l'index à un combattant
+	if current_index >= participants.size():
+		current_index = 0 # recommence le tour
+	var actor = participants[current_index]
+	current_index += 1
+	take_turn(actor)
+		
+func take_turn(actor):
+	# Donne le tour au combattant séléctionné
+	if actor == $EnemySprite:
+		turn_enemy()
+	else:
+		turn_player()
 		
 func end_or_not():
+	# Vérifie si c'est la fin du combat ou pas
 	if enemy_stats.pv <= 0:
 		get_tree().change_scene_to_file("res://scenes/décor_explo/Inser_ellenon.tscn")
 	else:
-		$submenu/pass.visible = false
-		turn_enemy()
+		next_turn()
