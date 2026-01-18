@@ -80,9 +80,10 @@ func damage_to_player():
 	if tonar_stats.pv <= 0:
 		print("BAAAHHH LA MERDE IL EST MORT")
 	else:
-		print("Ah bah oui ça fait bobo")
+		print("Ah bah oui ça fait bobo ", tonar_stats.pv)
 		
 func _on_action_finished():
+	damage_to_player()
 	next_turn()
 	
 func next_turn():
