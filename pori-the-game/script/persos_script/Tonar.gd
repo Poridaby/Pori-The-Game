@@ -22,6 +22,7 @@ var experience_required = get_required_experience(level + 1)
 var next_spawn_name: String = ""
 
 func _ready():
+	Inventory.set_player_reference(self)
 	if global_var.next_spawn_name != "":
 		var spawner = get_tree().current_scene.get_node(global_var.next_spawn_name)
 		global_position = spawner.global_position
