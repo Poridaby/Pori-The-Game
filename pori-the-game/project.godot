@@ -16,8 +16,6 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 
 [autoload]
 
-BattleManager="*res://script/combat_script/BattleManager.gd"
-PlayerManager="*res://script/combat_script/PlayerManager.gd"
 global_var="*res://script/save_script/global_var.gd"
 save_load_stats="*res://script/save_script/StatsManager.gd"
 
