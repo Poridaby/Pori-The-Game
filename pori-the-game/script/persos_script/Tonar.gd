@@ -2,6 +2,23 @@ extends CharacterBody2D
 class_name Player
 
 @export var speed = 400
+
+# Stats du personage
+@export var pv_max = 10
+@export var pm_max = 10
+@export var atk = 2
+@export var def = 1
+@export var spd = 1
+@export var pierre = 9
+
+#Système de niveau
+@export var level = 1
+
+var experience = 0
+var experience_total = 0
+var experience_required = get_required_experience(level + 1)
+
+
 var next_spawn_name: String = ""
 
 func _ready():
@@ -52,3 +69,27 @@ func _physics_process(_delta):
 
 	else:
 		$AnimatedSprite2D.stop()
+
+
+
+func get_required_experience(lvl):
+	# Renvoie le nombre d'experience nécessaire au lvl up
+	return round(pow(lvl, 1.8) + level * 4)
+	
+	
+func gain_experience(amount):
+	experience_total += amount
+	experience += amount
+	while experience >= experience_required:
+		experience -= experience_required
+		level_up()
+
+
+func level_up():
+	level += 1
+	experience_required = get_required_experience(level + 1)
+	
+	var stats = ["pv_max", "pm_max", "atk", "def", "spd", "pierre"]
+	for stat in stats:
+		set(stat, get(stat) + randi() % 4 + 2)
+	
