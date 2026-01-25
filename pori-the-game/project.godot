@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 
 global_var="*res://script/save_script/global_var.gd"
 save_load_stats="*res://script/save_script/StatsManager.gd"
+Inventory="*res://script/inventory/Inventory.gd"
 
 [display]
 
