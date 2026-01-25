@@ -1,15 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://dm6g17dqct7ip"]
+[gd_scene load_steps=6 format=3 uid="uid://dm6g17dqct7ip"]
 
-[ext_resource type="Script" uid="uid://bxx5v3pniow3e" path="res://script/combat_script/combat.gd" id="1_y7dlq"]
 [ext_resource type="Texture2D" uid="uid://du66nyjjny5ve" path="res://objet/New_Piskel.png" id="2_ltln3"]
-[ext_resource type="Script" uid="uid://dgv8bxgitmt86" path="res://script/combat_script/controle.gd" id="3_j4a54"]
 [ext_resource type="Texture2D" uid="uid://yuxbi15fm8p7" path="res://objet/boutton_attack.png" id="4_ekc3o"]
 [ext_resource type="Texture2D" uid="uid://bt1rqnuq61f74" path="res://objet/boutton_special.png" id="5_aoix4"]
 [ext_resource type="Texture2D" uid="uid://cw6g5pykob157" path="res://objet/boutton_soin.png" id="6_xgstd"]
 [ext_resource type="Texture2D" uid="uid://cc48d0i2i47uo" path="res://objet/boutton_fuir.png" id="7_n0ibx"]
 
 [node name="Combat" type="Node2D"]
-script = ExtResource("1_y7dlq")
 
 [node name="NewPiskel" type="Sprite2D" parent="."]
 position = Vector2(997.99994, 80)
@@ -23,7 +20,6 @@ offset_left = 98.0
 offset_top = -81.0
 offset_right = 129.0
 offset_bottom = -63.0
-script = ExtResource("3_j4a54")
 
 [node name="attack" type="Button" parent="HUD"]
 layout_mode = 0
