@@ -2,14 +2,16 @@ extends CharacterBody2D
 class_name Player
 
 @export var speed = 400
+@export var Stats: stats_list
+
 
 # Stats du personage
-@export var pv_max = 10
-@export var pm_max = 10
-@export var atk = 2
-@export var def = 1
-@export var spd = 1
-@export var pierre = 9
+#var pv_max = Stats.pv_max
+#var pm_max = Stats.pm_max
+#var atk = Stats.atk
+#var def = Stats.def
+#var spd = Stats.spd
+#var pierre = Stats.pierre
 
 #Système de niveau
 @export var level = 1
@@ -86,11 +88,11 @@ func gain_experience(amount):
 		level_up()
 
 
+
 func level_up():
 	level += 1
 	experience_required = get_required_experience(level + 1)
-	
+
 	var stats = ["pv_max", "pm_max", "atk", "def", "spd", "pierre"]
 	for stat in stats:
-		set(stat, get(stat) + randi() % 4 + 2)
-	
+		Stats.set(stat, Stats.get(stat) + randi() % 4 + 2)
