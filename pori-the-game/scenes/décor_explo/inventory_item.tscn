@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://stiowdkn63b8"]
+
+[ext_resource type="Texture2D" uid="uid://cqsnybf3maey3" path="res://objet/pixil-frame-0 (14).png" id="1_l4yeh"]
+[ext_resource type="Script" uid="uid://bgt4mdto7w7lj" path="res://script/inventory/inventoty_item.gd" id="1_yr1or"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yr1or"]
+radius = 13.038404
+
+[node name="inventory_item" type="Node2D" groups=["items"]]
+script = ExtResource("1_yr1or")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_yr1or")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_l4yeh")
