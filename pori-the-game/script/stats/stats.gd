@@ -1,6 +1,6 @@
 extends Resource
 
-class_name stats
+class_name stats_list
 
 @export var pv_max: int
 @export var pm_max: int

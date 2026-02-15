@@ -1,7 +1,13 @@
-[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://ckhxrovpkc4r8"]
+[gd_resource type="Resource" script_class="stats_list" load_steps=2 format=3 uid="uid://ckhxrovpkc4r8"]
 
 [ext_resource type="Script" uid="uid://cfl8vvuipm6em" path="res://script/stats/stats.gd" id="1_pnt2w"]
 
 [resource]
 script = ExtResource("1_pnt2w")
+pv_max = 16
+pm_max = 16
+atk = 8
+def = 5
+spd = 9
+pierre = 5
 metadata/_custom_type_script = "uid://x40isc0mxtcj"
