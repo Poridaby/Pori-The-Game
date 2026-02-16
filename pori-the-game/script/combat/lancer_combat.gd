@@ -7,9 +7,10 @@ func _ready():
 
 
 func recup_infos(id_combat):
-	var combats_possibles = ["test"]
+	var combats_possibles = [
+	preload("res://script/stats/ressource combat/test.tres"),
+]
+
 	print(combats_possibles)
 	var combat = combats_possibles[id_combat]
-	print(combat)
-	var scene = combat.combat_class.scene
-	return scene
+	return combat.scene
