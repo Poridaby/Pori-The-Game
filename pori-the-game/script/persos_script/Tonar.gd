@@ -37,6 +37,8 @@ func _physics_process(_delta):
 	:param _delta: a laisser, jamais utilisé mais obligatoire pour que la fonction soit reconnue
 	:comportement: déplacement du personnage lors de l'utilisation des touches
 	"""
+	if Input.is_action_just_pressed("debug"):
+		LancerCombat.recup_infos(0)
 	# Assigne 1 velocité par touches
 	var vel = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):

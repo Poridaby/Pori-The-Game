@@ -3,9 +3,13 @@ extends Node
 @export var stats_class_local: combat_class
 
 func _ready():
-	infos = recup_infos()
+	var infos = recup_infos(0)
 
 
 func recup_infos(id_combat):
-	
-	scene = 
+	var combats_possibles = ["test"]
+	print(combats_possibles)
+	var combat = combats_possibles[id_combat]
+	print(combat)
+	var scene = combat.combat_class.scene
+	return scene
