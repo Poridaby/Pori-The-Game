@@ -11,6 +11,8 @@ var scene_path: String = "res://scenes/décor_explo/inventory_item.tscn"
 # Réference du node de scène
 @onready var icon_sprite = $Sprite2D
 
+var player_in_range = false
+
 func _ready():
 	# Set la texture pour l'afficher in game
 	if not Engine.is_editor_hint():
@@ -35,3 +37,10 @@ func pickup_item():
 		Inventory.add_item(item)
 		self.queue_free()
 		
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.
