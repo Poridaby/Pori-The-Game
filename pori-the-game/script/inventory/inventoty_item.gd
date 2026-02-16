@@ -44,8 +44,10 @@ func pickup_item():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		player_in_range = true
+		body.interact_ui.visible = true
 
 # Si le joueur n'est pas dans la zone de collision de l'item, alors il ne peut pas le prendre
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		player_in_range = false
+		body.interact_ui.visible = false

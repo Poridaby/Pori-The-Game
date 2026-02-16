@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
+@onready var interact_ui = $InteractUI
+
 @export var speed = 400
 @export var stats_class_local: stats_class_player
 
