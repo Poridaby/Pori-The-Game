@@ -2,7 +2,7 @@ extends Node
 
 @export var stats_class_local: combat_class
 
-func _ready():
+func combattre():
 	var regions = [["inserelenon",["ptitcrote","Carotte_maléfique"]]
 		]
 	var combat = recup_infos(0)
