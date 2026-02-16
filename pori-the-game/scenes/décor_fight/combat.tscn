@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dm6g17dqct7ip"]
+[gd_scene format=3 uid="uid://dm6g17dqct7ip"]
 
 [ext_resource type="Texture2D" uid="uid://du66nyjjny5ve" path="res://objet/New_Piskel.png" id="2_ltln3"]
 [ext_resource type="Texture2D" uid="uid://yuxbi15fm8p7" path="res://objet/boutton_attack.png" id="4_ekc3o"]
@@ -6,14 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://cw6g5pykob157" path="res://objet/boutton_soin.png" id="6_xgstd"]
 [ext_resource type="Texture2D" uid="uid://cc48d0i2i47uo" path="res://objet/boutton_fuir.png" id="7_n0ibx"]
 
-[node name="Combat" type="Node2D"]
+[node name="Combat" type="Node2D" unique_id=355659430]
+position = Vector2(0, -1)
 
-[node name="NewPiskel" type="Sprite2D" parent="."]
+[node name="NewPiskel" type="Sprite2D" parent="." unique_id=1354017812]
 position = Vector2(997.99994, 80)
 scale = Vector2(0.8985937, 0.91718745)
 texture = ExtResource("2_ltln3")
 
-[node name="HUD" type="Control" parent="."]
+[node name="HUD" type="Control" parent="." unique_id=634012764]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 98.0
@@ -21,7 +22,7 @@ offset_top = -81.0
 offset_right = 129.0
 offset_bottom = -63.0
 
-[node name="attack" type="Button" parent="HUD"]
+[node name="attack" type="Button" parent="HUD" unique_id=673720429]
 layout_mode = 0
 offset_left = 680.0
 offset_top = 921.0
@@ -31,7 +32,7 @@ action_mode = 0
 icon = ExtResource("4_ekc3o")
 icon_alignment = 1
 
-[node name="Special" type="Button" parent="HUD"]
+[node name="Special" type="Button" parent="HUD" unique_id=1393345380]
 layout_mode = 0
 offset_left = 956.0
 offset_top = 921.0
@@ -39,7 +40,7 @@ offset_right = 1164.0
 offset_bottom = 1129.0
 icon = ExtResource("5_aoix4")
 
-[node name="Health" type="Button" parent="HUD"]
+[node name="Health" type="Button" parent="HUD" unique_id=1011188528]
 layout_mode = 0
 offset_left = 1225.0
 offset_top = 922.0
@@ -47,7 +48,7 @@ offset_right = 1433.0
 offset_bottom = 1130.0
 icon = ExtResource("6_xgstd")
 
-[node name="Run" type="Button" parent="HUD"]
+[node name="Run" type="Button" parent="HUD" unique_id=641971910]
 layout_mode = 0
 offset_left = 1491.0
 offset_top = 922.0
@@ -56,7 +57,7 @@ offset_bottom = 1130.0
 button_mask = 0
 icon = ExtResource("7_n0ibx")
 
-[node name="submenu" type="Control" parent="."]
+[node name="submenu" type="Control" parent="." unique_id=1333806882]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 724.0
@@ -64,7 +65,7 @@ offset_top = -121.0
 offset_right = 801.0
 offset_bottom = -72.0
 
-[node name="attack_1" type="Button" parent="submenu"]
+[node name="attack_1" type="Button" parent="submenu" unique_id=1326516146]
 layout_mode = 0
 offset_left = 57.0
 offset_top = 963.0
@@ -72,27 +73,36 @@ offset_right = 264.0
 offset_bottom = 1170.0
 text = "attaque 1"
 
-[node name="pass" type="Button" parent="submenu"]
+[node name="pass" type="Button" parent="submenu" unique_id=939222984]
 layout_mode = 0
 offset_left = 865.0
 offset_top = 962.0
 offset_right = 1073.0
 offset_bottom = 1170.0
 
-[node name="player" type="Node2D" parent="."]
+[node name="player" type="Node2D" parent="." unique_id=943036721]
 
-[node name="TonarSprite" type="Sprite2D" parent="player"]
+[node name="TonarSprite" type="Sprite2D" parent="player" unique_id=1797243733]
 texture_filter = 1
 position = Vector2(273.18, 216.27)
 scale = Vector2(9.355, 9.355)
 
-[node name="Enemy" type="Node2D" parent="."]
+[node name="Enemy" type="Node2D" parent="." unique_id=1779489340]
 
-[node name="EnemySprite" type="Sprite2D" parent="Enemy"]
+[node name="EnemySprite" type="Sprite2D" parent="Enemy" unique_id=676464605]
 texture_filter = 1
 position = Vector2(1647.24, 501.395)
 scale = Vector2(6.855, 6.855)
 flip_h = true
+
+[node name="ennemi1" type="Node2D" parent="." unique_id=2087909792]
+position = Vector2(1946, 371)
+
+[node name="ennemi2" type="Node2D" parent="." unique_id=1671184484]
+position = Vector2(1849, 539)
+
+[node name="ennemi3" type="Node2D" parent="." unique_id=1507445806]
+position = Vector2(1745, 717)
 
 [connection signal="pressed" from="HUD/attack" to="HUD" method="_on_attack_pressed"]
 [connection signal="pressed" from="HUD/Special" to="HUD" method="_on_special_pressed"]
