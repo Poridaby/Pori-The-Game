@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=11 format=3 uid="uid://ob8ee2f8nyuc"]
+=======
+[gd_scene format=3 uid="uid://ob8ee2f8nyuc"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://cg4ju44ncntj4" path="res://script/persos_script/Tonar.gd" id="1_n1u3g"]
 [ext_resource type="Texture2D" uid="uid://dngcw7yat7cp2" path="res://objet/Poridaby_face_marche1.png" id="2_n4q3y"]
@@ -37,32 +41,36 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qh3kn"]
 
+<<<<<<< Updated upstream
 [sub_resource type="FontVariation" id="FontVariation_tbt4p"]
 
 [node name="Joueur_P" type="CharacterBody2D" groups=["Player"]]
+=======
+[node name="Joueur_P" type="CharacterBody2D" unique_id=2117325053 groups=["Player"]]
+>>>>>>> Stashed changes
 texture_filter = 1
 script = ExtResource("1_n1u3g")
 stats_class_local = ExtResource("2_tbt4p")
 metadata/_edit_horizontal_guides_ = [-137.0, -206.0]
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1337370488]
 position = Vector2(2, 10.5)
 shape = SubResource("RectangleShape2D_n4q3y")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1288338852]
 sprite_frames = SubResource("SpriteFrames_n4q3y")
 animation = &"haut"
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1801116734]
 zoom = Vector2(1.5, 1.5)
 
-[node name="Panneau" parent="." instance=ExtResource("5_4nhif")]
+[node name="Panneau" parent="." unique_id=1879220941 instance=ExtResource("5_4nhif")]
 position = Vector2(2.4099731, 113)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=324956521]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1128310882]
 shape = SubResource("RectangleShape2D_qh3kn")
 
 [node name="InteractUI" type="CanvasLayer" parent="."]
