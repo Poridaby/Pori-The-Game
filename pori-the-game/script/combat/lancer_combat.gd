@@ -15,5 +15,5 @@ func recup_infos(id_combat):
 	var scene = combat.scene
 	var nbr_ennemi = combat.nbr_ennemi
 	var region = combat.region
-	var ennemi_principal = combat.ennemi_pricipal
+	var ennemi_principal = combat.ennemi_principal
 	return [scene, nbr_ennemi, region, ennemi_principal]

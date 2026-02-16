@@ -40,8 +40,9 @@ func _physics_process(_delta):
 	:comportement: déplacement du personnage lors de l'utilisation des touches
 	"""
 	if Input.is_action_just_pressed("debug"):
-		var scene = LancerCombat.recup_infos(0)
-		get_tree().change_scene_to_packed(scene)
+		var combat = LancerCombat.recup_infos(0)
+		print(combat)
+		get_tree().change_scene_to_packed(combat[0])
 		
 	# Assigne 1 velocité par touches
 	var vel = Vector2.ZERO
