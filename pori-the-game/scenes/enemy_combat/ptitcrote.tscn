@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bssw6l8yhu13w"]
+
+[ext_resource type="Texture2D" uid="uid://bl1hn5uijamw" path="res://objet/enemie.png" id="1_5e6h6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpr68"]
+size = Vector2(36.078125, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55jtl"]
+size = Vector2(233.5286, 218.22641)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=29069413]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1148318035]
+texture_filter = 1
+scale = Vector2(4.3125005, 3.9765625)
+texture = ExtResource("1_5e6h6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=903800473]
+position = Vector2(0, 6.1875)
+shape = SubResource("RectangleShape2D_mpr68")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=903597126]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2144408723]
+position = Vector2(1.09375, 8)
+shape = SubResource("RectangleShape2D_55jtl")

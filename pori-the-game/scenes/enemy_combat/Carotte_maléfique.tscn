@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bcdelae6fk576"]
+
+[ext_resource type="PackedScene" uid="uid://bssw6l8yhu13w" path="res://scenes/enemy_combat/ptitcrote.tscn" id="1_ywxbq"]
+[ext_resource type="Texture2D" uid="uid://ndjtisx4hxhm" path="res://icon.svg" id="2_t2b3n"]
+
+[node name="CharacterBody2D" instance=ExtResource("1_ywxbq")]
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(1.868, 1.722)
+texture = ExtResource("2_t2b3n")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(1.2357025, -4.113205)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

@@ -3,36 +3,47 @@ extends Node
 @export var stats_class_local: combat_class
 
 func combattre(id_combat):
-	var regions = [["inserelenon",["ptitcrote","Carotte_maléfique"]]
-		]
+
+	var regions = {
+		"inserelenon": ["ptitcrote", "Carotte_maléfique"]
+	}
+
 	var combat = recup_infos(id_combat)
-	get_tree().change_scene_to_packed(combat[0])
+
+	var scene = combat[0]
 	var nbr_ennemi = combat[1]
 	var region_actuelle = combat[2]
 	var ennemi_principal = combat[3]
-	var mob_region = ["ennemie shiny de fou malade ultra rare (impossible a avoir)"]
 
-	for region in regions:
-			if region[0] == region_actuelle:
-				mob_region = region[1]
-	
+	var mob_region = regions.get(region_actuelle, [])
+
 	var ennemis = []
-	for i in range(0, nbr_ennemi):
+
+	for i in range(nbr_ennemi):
 		if i == 0:
 			ennemis.append(ennemi_principal)
 		else:
 			ennemis.append(mob_region.pick_random())
-	
+
+	var combat_instance = scene.instantiate()
+	combat_instance.setup_combat(ennemis)
+
+	get_tree().current_scene.queue_free()
+	get_tree().root.add_child(combat_instance)
+	get_tree().current_scene = combat_instance
 
 
 func recup_infos(id_combat):
+
 	var combats_possibles = [
-	preload("res://script/stats/ressource combat/test.tres"),
-]
-	# Renvoie la bonne ressource
+		preload("res://script/stats/ressource combat/test.tres")
+	]
+
 	var combat = combats_possibles[id_combat]
-	var scene = combat.scene
-	var nbr_ennemi = combat.nbr_ennemi
-	var region = combat.region
-	var ennemi_principal = combat.ennemi_principal
-	return [scene, nbr_ennemi, region, ennemi_principal]
+
+	return [
+		combat.scene,
+		combat.nbr_ennemi,
+		combat.region,
+		combat.ennemi_principal
+	]

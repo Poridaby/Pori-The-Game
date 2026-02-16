@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_058k1")
 scene = ExtResource("1_l0cw1")
-nbr_ennemi = 2
-region = "inserrelenon"
-ennemi_principal = "pticrote.tscn"
+nbr_ennemi = 3
+region = "inserelenon"
+ennemi_principal = "ptitcrote"
 metadata/_custom_type_script = "uid://c0338vj6nhnjq"

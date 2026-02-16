@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ct7p06r0bcx08"]
+[gd_scene format=3 uid="uid://ct7p06r0bcx08"]
 
-[ext_resource type="PackedScene" uid="uid://bssw6l8yhu13w" path="res://scenes/enemy_explo/Enemy.tscn" id="1_x77ld"]
+[ext_resource type="PackedScene" uid="uid://bssw6l8yhu13w" path="res://scenes/enemy_combat/ptitcrote.tscn" id="1_x77ld"]
 [ext_resource type="Texture2D" uid="uid://cvr5pl8jlh3a8" path="res://objet/ptitecrote_map.png" id="2_c3r5j"]
 
 [node name="CharacterBody2D" instance=ExtResource("1_x77ld")]
