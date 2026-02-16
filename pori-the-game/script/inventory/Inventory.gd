@@ -18,7 +18,7 @@ func _ready():
 func add_item(item):
 	for i in range(inventory.size()):
 		# Check si l'item existe dans l'inventaire et matche avec le type et l'effet
-		if inventory[i] != null and inventory[i]["type"] == item["item"] and inventory[i]["effect"] == item["item"]:
+		if inventory[i] != null and inventory[i]["type"] == item["type"] and inventory[i]["effect"] == item["type"]:
 			inventory[i]["quantity"] += item["quantity"]
 			inventory_updated.emit()
 			return true

@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://c1yqbnap2q4d8" path="res://script/dialog_box_script/dialogues/test_dialogue_2.tres" id="5_pvpg1"]
 [ext_resource type="PackedScene" uid="uid://wghtx6lijqrb" path="res://scenes/enemy_explo/Carotte_maléfique.tscn" id="5_qo2l3"]
 [ext_resource type="PackedScene" uid="uid://stiowdkn63b8" path="res://scenes/décor_explo/inventory_item.tscn" id="8_beao6"]
+[ext_resource type="Texture2D" uid="uid://b22vxog54aqkb" path="res://objet/potion_verte.png" id="8_pvpg1"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_tbgi4"]
 b = Vector2(1920, 0)
@@ -71,6 +72,12 @@ position = Vector2(1269, 502)
 
 [node name="CharacterBody2D2" parent="." unique_id=1377816997 instance=ExtResource("5_qo2l3")]
 position = Vector2(960, 229)
+
+[node name="inventory_item2" parent="." unique_id=293345233 instance=ExtResource("8_beao6")]
+position = Vector2(751, 329)
+item_name = "green potion"
+item_texture = ExtResource("8_pvpg1")
+item_effect = "heal 10 pm"
 
 [node name="inventory_item" parent="." unique_id=1143526456 instance=ExtResource("8_beao6")]
 position = Vector2(1147, 321)
