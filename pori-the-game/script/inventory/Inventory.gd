@@ -16,7 +16,17 @@ func _ready():
 # Rajoute un item dans l'inventaire
 @warning_ignore("unused_parameter")
 func add_item(item):
-	inventory_updated.emit()
+	for i in range(inventory.size()):
+		# Check si l'item existe dans l'inventaire et matche avec le type et l'effet
+		if inventory[i] != null and inventory[i]["type"] == item["item"] and inventory[i]["effect"] == item["item"]:
+			inventory[i]["quantity"] += item["quantity"]
+			inventory_updated.emit()
+			return true
+		elif inventory[i] == null:
+			inventory[i] = item
+			inventory_updated.emit()
+			return true
+		return false
 	
 # Retire un item de l'inventaire
 func remove_item():
