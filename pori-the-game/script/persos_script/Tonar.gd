@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 @export var speed = 400
-@export var Stats: stats_list
+@export var stats_class_local: stats_class_player
 
 
 # Stats du personage
@@ -93,6 +93,6 @@ func level_up():
 	level += 1
 	experience_required = get_required_experience(level + 1)
 
-	var stats = ["pv_max", "pm_max", "atk", "def", "spd", "pierre"]
-	for stat in stats:
-		Stats.set(stat, Stats.get(stat) + randi() % 4 + 2)
+	var stats_list = ["pv_max", "pm_max", "atk", "def", "spd", "pierre"]
+	for stat_actuelle in stats_list:
+		stats_class_local.set(stat_actuelle, stats_class_local.get(stat_actuelle) + randi() % 4 + 2)

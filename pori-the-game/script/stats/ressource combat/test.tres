@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="combat" format=3 uid="uid://b0ooda6tok7l3"]
+
+[ext_resource type="Script" uid="uid://c0338vj6nhnjq" path="res://script/stats/combat.gd" id="1_058k1"]
+
+[resource]
+script = ExtResource("1_058k1")
+scene = "res://scenes/décor_fight/combat.tscn"
+nbr_ennemi = 2
+region = "inserellenon"
+ennemi_principal = "pticrote.tscn"
+metadata/_custom_type_script = "uid://c0338vj6nhnjq"
