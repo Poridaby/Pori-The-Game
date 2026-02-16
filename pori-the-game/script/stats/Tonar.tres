@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="stats_list" format=3 uid="uid://ckhxrovpkc4r8"]
+[gd_resource type="Resource" script_class="stats_class_player" format=3 uid="uid://ckhxrovpkc4r8"]
 
 [ext_resource type="Script" uid="uid://cfl8vvuipm6em" path="res://script/stats/player_stats_script.gd" id="1_pnt2w"]
 
@@ -10,4 +10,3 @@ atk = 8
 def = 5
 spd = 9
 pierre = 5
-metadata/_custom_type_script = "uid://x40isc0mxtcj"
