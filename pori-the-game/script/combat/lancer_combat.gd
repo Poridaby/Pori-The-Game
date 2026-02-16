@@ -2,10 +2,10 @@ extends Node
 
 @export var stats_class_local: combat_class
 
-func combattre():
+func combattre(id_combat):
 	var regions = [["inserelenon",["ptitcrote","Carotte_maléfique"]]
 		]
-	var combat = recup_infos(0)
+	var combat = recup_infos(id_combat)
 	get_tree().change_scene_to_packed(combat[0])
 	var nbr_ennemi = combat[1]
 	var region_actuelle = combat[2]
