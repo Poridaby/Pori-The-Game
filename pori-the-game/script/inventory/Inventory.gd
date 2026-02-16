@@ -14,7 +14,6 @@ func _ready():
 	inventory.resize(30)
 
 # Rajoute un item dans l'inventaire
-@warning_ignore("unused_parameter")
 func add_item(item):
 	for i in range(inventory.size()):
 		# Check si l'item existe dans l'inventaire et matche avec le type et l'effet
