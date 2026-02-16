@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dygsd87v3m7t4"]
+[gd_scene format=3 uid="uid://dygsd87v3m7t4"]
 
 [ext_resource type="Script" uid="uid://bkm3aafrxcd2t" path="res://script/warp_script/warp.gd" id="1_8bl4t"]
 [ext_resource type="PackedScene" uid="uid://be0cbrh4ogbni" path="res://scenes/Objets/panneau.tscn" id="2_qo2l3"]
@@ -27,55 +27,55 @@ b = Vector2(0, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tv06q"]
 size = Vector2(162, 456.5)
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=1491841771]
 script = ExtResource("1_8bl4t")
 
-[node name="Panneau" parent="." instance=ExtResource("2_qo2l3")]
+[node name="Panneau" parent="." unique_id=390411404 instance=ExtResource("2_qo2l3")]
 position = Vector2(575, 517)
 dialogue = ExtResource("4_beao6")
 
-[node name="Panneau2" parent="." instance=ExtResource("2_qo2l3")]
+[node name="Panneau2" parent="." unique_id=1605928832 instance=ExtResource("2_qo2l3")]
 position = Vector2(576, 365)
 dialogue = ExtResource("5_pvpg1")
 
-[node name="Map Border" type="StaticBody2D" parent="."]
+[node name="Map Border" type="StaticBody2D" parent="." unique_id=724788469]
 collision_priority = 20.0
 
-[node name="Lim N" type="CollisionShape2D" parent="Map Border"]
+[node name="Lim N" type="CollisionShape2D" parent="Map Border" unique_id=150933956]
 shape = SubResource("SegmentShape2D_tbgi4")
 
-[node name="Lim E" type="CollisionShape2D" parent="Map Border"]
+[node name="Lim E" type="CollisionShape2D" parent="Map Border" unique_id=515249334]
 position = Vector2(1920, 0)
 shape = SubResource("SegmentShape2D_sugp2")
 
-[node name="Lim S" type="CollisionShape2D" parent="Map Border"]
+[node name="Lim S" type="CollisionShape2D" parent="Map Border" unique_id=229510112]
 position = Vector2(-9, 1080)
 shape = SubResource("SegmentShape2D_jyhfs")
 
-[node name="Lim O" type="CollisionShape2D" parent="Map Border"]
+[node name="Lim O" type="CollisionShape2D" parent="Map Border" unique_id=1864003034]
 shape = SubResource("SegmentShape2D_tefeu")
 
-[node name="exit" type="Area2D" parent="."]
+[node name="exit" type="Area2D" parent="." unique_id=158969436]
 position = Vector2(28, 24)
 collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit" unique_id=599147089]
 position = Vector2(1805, 525)
 shape = SubResource("RectangleShape2D_tv06q")
 
-[node name="SpawnerRight" type="Marker2D" parent="."]
+[node name="SpawnerRight" type="Marker2D" parent="." unique_id=190912346]
 position = Vector2(1626, 552)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("4_7oamr")]
+[node name="CharacterBody2D" parent="." unique_id=645784833 instance=ExtResource("4_7oamr")]
 position = Vector2(1269, 502)
 
-[node name="CharacterBody2D2" parent="." instance=ExtResource("5_qo2l3")]
+[node name="CharacterBody2D2" parent="." unique_id=1377816997 instance=ExtResource("5_qo2l3")]
 position = Vector2(960, 229)
 
-[node name="inventory_item" parent="." instance=ExtResource("8_beao6")]
+[node name="inventory_item" parent="." unique_id=1143526456 instance=ExtResource("8_beao6")]
 position = Vector2(1147, 321)
 
-[node name="Joueur_P" parent="." instance=ExtResource("3_0oat6")]
+[node name="Joueur_P" parent="." unique_id=964804729 instance=ExtResource("3_0oat6")]
 position = Vector2(900, 512)
 
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
