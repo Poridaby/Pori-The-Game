@@ -47,13 +47,18 @@ func spawn_ennemis():
 	ennemi3_stats = stats[2]
 
 
+# Fonction qui récupère les stats de chaques mobs
 func recup_infos(ennemi):
+	# Dictionaire qui stocke chaque ennemis avec comme clef le nom exacte du mob
 	var ennemi_possibles = {
 		"ptitcrote": preload("res://script/stats/stats_ennemis/ptitcrote.tres"),
 		"Carotte_maléfique": preload("res://script/stats/stats_ennemis/carotte_maléfique.tres"),
 	}
 
+	# Stocke toutes les stats de l'ennemi
 	var ennemi_stats = ennemi_possibles[ennemi]
+	
+	# Récupère chaque variables individuellements pour augmenter la lisibilité
 	var pv = ennemi_stats.pv
 	var pm = ennemi_stats.pm
 	var atk = ennemi_stats.atk
