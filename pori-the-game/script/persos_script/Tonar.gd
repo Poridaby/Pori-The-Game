@@ -39,6 +39,7 @@ func _physics_process(_delta):
 	:param _delta: a laisser, jamais utilisé mais obligatoire pour que la fonction soit reconnue
 	:comportement: déplacement du personnage lors de l'utilisation des touches
 	"""
+	# Test du système de combat
 	if Input.is_action_just_pressed("debug"):
 		LancerCombat.combattre(0)
 		
