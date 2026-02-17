@@ -2,12 +2,15 @@ extends Node
 
 @export var stats_class_local: combat_class
 
+# Fonction appelée par les script a chaque moments ou il faut lancer un combat avec LancerCombat.combattre(id_combat)
 func combattre(id_combat):
 
+	# Mettre ici toutes les régions du jeu avec les énnemis possibles dedans
 	var regions = {
 		"inserelenon": ["ptitcrote", "Carotte_maléfique"]
 	}
 
+	# La variable combat stocke toutes les infos du combat a lancer
 	var combat = recup_infos(id_combat)
 
 	var scene = combat[0]
