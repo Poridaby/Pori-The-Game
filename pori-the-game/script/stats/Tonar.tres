@@ -5,7 +5,9 @@
 [resource]
 script = ExtResource("1_pnt2w")
 pv_max = 16
+pv = 16
 pm_max = 16
+pm = 16
 atk = 8
 def = 5
 spd = 9

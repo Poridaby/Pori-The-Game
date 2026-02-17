@@ -1,10 +1,8 @@
 extends Resource
 
-class_name stats_class_player
+class_name stats_class_ennemis
 
-@export var pv_max: int
 @export var pv: int
-@export var pm_max: int
 @export var pm: int
 @export var atk: int
 @export var def: int

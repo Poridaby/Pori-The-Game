@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="stats_class_ennemis" format=3 uid="uid://b6ce057ywbmtq"]
+
+[ext_resource type="Script" uid="uid://b5cxual2qsggp" path="res://script/stats/ennemi_stats.gd" id="1_jmplf"]
+
+[resource]
+script = ExtResource("1_jmplf")
+pv = 9
+pm = 11
+atk = 10
+def = 12
+spd = 7
+pierre = 9
+metadata/_custom_type_script = "uid://b5cxual2qsggp"
