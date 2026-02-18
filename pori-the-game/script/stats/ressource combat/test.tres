@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="combat_class" format=3 uid="uid://b0ooda6tok7l3"]
 
-[ext_resource type="Script" uid="uid://c0338vj6nhnjq" path="res://script/stats/combat_info.gd" id="1_058k1"]
+[ext_resource type="Script" path="res://script/stats/combat_info.gd" id="1_058k1"]
 [ext_resource type="PackedScene" uid="uid://dm6g17dqct7ip" path="res://scenes/décor_fight/combat.tscn" id="1_l0cw1"]
 
 [resource]
