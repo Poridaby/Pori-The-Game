@@ -5,7 +5,7 @@ var inventory = []
 
 # Scene et Node Référence
 var player_node: Node = null
-
+@onready var scene_inventory = preload("res://scenes/décor_explo/InventoryUI.tscn")
 # Signals customes
 signal inventory_updated
 
@@ -17,7 +17,7 @@ func _ready():
 func add_item(item):
 	for i in range(inventory.size()):
 		# Check si l'item existe dans l'inventaire et matche avec le type et l'effet
-		if inventory[i] != null and inventory[i]["type"] == item["type"] and inventory[i]["effect"] == item["type"]:
+		if inventory[i] != null and inventory[i]["type"] == item["type"] and inventory[i]["effect"] == item["effect"]:
 			inventory[i]["quantity"] += item["quantity"]
 			inventory_updated.emit()
 			return true
@@ -25,7 +25,7 @@ func add_item(item):
 			inventory[i] = item
 			inventory_updated.emit()
 			return true
-		return false
+	return false
 	
 # Retire un item de l'inventaire
 func remove_item():

@@ -53,6 +53,10 @@ func _physics_process(_delta):
 		vel.y -= 1
 	if Input.is_action_pressed("move_down"):
 		vel.y += 1
+		
+	# Ouvre l'inventaire
+	if Input.is_action_just_pressed("inventory"):
+		get_tree().change_scene_to_file("res://scenes/décor_explo/InventoryUI.tscn")
 
 
 	if global_var.player_can_move == true:
