@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://3dl20v5d4a6r"]
 
-[ext_resource type="Texture2D" uid="uid://cwrh7q58k4cs7" path="res://objet/inventory_BACKGROUUUUUNNDD.jpg" id="1_5lgwm"]
+[ext_resource type="Texture2D" uid="uid://dndp7gt4rl71b" path="res://objet/Inv.jpg" id="1_5lgwm"]
 [ext_resource type="Script" uid="uid://bucgjjqq86rb" path="res://script/inventory/Item_Stock.gd" id="1_bd1sv"]
 
 [node name="Inventory" type="Node2D" unique_id=1171652446]
 
-[node name="InventoryBackgrouuuuunndd" type="Sprite2D" parent="." unique_id=144961055]
+[node name="Inv" type="Sprite2D" parent="." unique_id=777137671]
 texture_filter = 1
-position = Vector2(962.0001, 545)
-scale = Vector2(30.187504, 17)
+position = Vector2(961.50006, 539.49994)
+scale = Vector2(29.984379, 16.859375)
 texture = ExtResource("1_5lgwm")
 
 [node name="Item_Stock" type="Control" parent="." unique_id=922642920]
