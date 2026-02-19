@@ -3,10 +3,12 @@ extends Control
 @onready var vbox_container = $VBoxContainer
 
 func _ready():
+	# Reçois le signal permettant de mettre à jour l'inventaire
 	Inventory.inventory_updated.connect(_on_inventory_updated)
 	_on_inventory_updated()
 	
 func _on_inventory_updated():
+	# Vide l'inventaire pour rajouter les items en plus avec leur icone et leur nom
 	clear_vbox_container()
 	for item in Inventory.inventory:
 		if item == null:
@@ -22,6 +24,7 @@ func _on_inventory_updated():
 	
 	
 func clear_vbox_container():
+	# Vide complètement l'inventaire
 	while vbox_container.get_child_count() > 0:
 		var child = vbox_container.get_child(0)
 		vbox_container.remove_child(child)
