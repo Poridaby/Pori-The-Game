@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 @onready var interact_ui = $InteractUI
+@onready var inventory_visible = false
 
 @export var speed = 400
 @export var stats_class_local: stats_class_player
@@ -56,7 +57,13 @@ func _physics_process(_delta):
 		
 	# Ouvre l'inventaire
 	if Input.is_action_just_pressed("inventory"):
-		get_tree().change_scene_to_file("res://scenes/décor_explo/InventoryUI.tscn")
+		inventory_visible = !inventory_visible
+		if inventory_visible:
+			$Inventory.visible = true
+			global_var.player_can_move = false
+		else:
+			$Inventory.visible = false
+			global_var.player_can_move = true
 
 
 	if global_var.player_can_move == true:

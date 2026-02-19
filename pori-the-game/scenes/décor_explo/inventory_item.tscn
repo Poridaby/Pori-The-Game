@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://stiowdkn63b8"]
+[gd_scene format=3 uid="uid://stiowdkn63b8"]
 
 [ext_resource type="Texture2D" uid="uid://cqsnybf3maey3" path="res://objet/potion_rouge.png" id="1_l4yeh"]
 [ext_resource type="Script" uid="uid://bgt4mdto7w7lj" path="res://script/inventory/inventoty_item.gd" id="1_yr1or"]
@@ -6,19 +6,19 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_yr1or"]
 radius = 13.038404
 
-[node name="inventory_item" type="Node2D" groups=["items"]]
+[node name="inventory_item" type="Node2D" unique_id=1619124045 groups=["items"]]
 script = ExtResource("1_yr1or")
 item_type = "Consumable"
-item_name = "red potion"
+item_name = "potion rouge"
 item_texture = ExtResource("1_l4yeh")
 item_effect = "heal 10 pv"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=370886213]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=535570740]
 shape = SubResource("CircleShape2D_yr1or")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2028575847]
 texture_filter = 1
 texture = ExtResource("1_l4yeh")
 

@@ -5,22 +5,36 @@
 
 [node name="Inventory" type="Node2D" unique_id=1171652446]
 
-[node name="Inv" type="Sprite2D" parent="." unique_id=777137671]
-texture_filter = 1
-position = Vector2(961.50006, 539.49994)
-scale = Vector2(29.984379, 16.859375)
-texture = ExtResource("1_5lgwm")
-
 [node name="Item_Stock" type="Control" parent="." unique_id=922642920]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 1917.0
-offset_bottom = 1082.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -633.0
+offset_top = -356.0
+offset_right = 632.07996
+offset_bottom = 356.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
 script = ExtResource("1_bd1sv")
 
+[node name="Inv" type="Sprite2D" parent="Item_Stock" unique_id=777137671]
+texture_filter = 1
+position = Vector2(629.99994, 356)
+scale = Vector2(20.259, 11.39)
+texture = ExtResource("1_5lgwm")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Item_Stock" unique_id=1838374870]
-layout_mode = 0
-offset_left = 96.0
-offset_top = 233.0
-offset_right = 250.0
-offset_bottom = 912.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.057000004
+anchor_top = 0.275
+anchor_right = 0.057000004
+anchor_bottom = 0.275
+offset_left = -0.0951767
+offset_top = 0.19999695
+offset_right = 407.90485
+offset_bottom = 415.2

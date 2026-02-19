@@ -75,12 +75,16 @@ position = Vector2(960, 229)
 
 [node name="inventory_item2" parent="." unique_id=293345233 instance=ExtResource("8_beao6")]
 position = Vector2(751, 329)
-item_name = "green potion"
+item_type = "Consomable"
+item_name = "potion verte"
 item_texture = ExtResource("8_pvpg1")
-item_effect = "heal 10 pm"
+item_effect = "soigne 10 pm"
 
 [node name="inventory_item" parent="." unique_id=1143526456 instance=ExtResource("8_beao6")]
 position = Vector2(1147, 321)
+item_type = "Consomable"
+item_name = "potion rouge"
+item_effect = "soigne 10 pv"
 
 [node name="Joueur_P" parent="." unique_id=964804729 instance=ExtResource("3_0oat6")]
 position = Vector2(900, 512)
