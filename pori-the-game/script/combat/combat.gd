@@ -43,8 +43,10 @@ func spawn_ennemis():
 	
 	# Stocke les stats de chaques mobs individuellement
 	ennemi1_stats = stats[0]
-	ennemi2_stats = stats[1]
-	ennemi3_stats = stats[2]
+	if ennemis_a_spawn.size() >= 2:
+		ennemi2_stats = stats[1]
+		if ennemis_a_spawn.size() >= 3:
+			ennemi3_stats = stats[2]
 
 
 # Fonction qui récupère les stats de chaques mobs
