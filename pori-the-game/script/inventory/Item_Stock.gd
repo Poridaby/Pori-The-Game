@@ -27,8 +27,11 @@ func _on_inventory_updated():
 		# Crée un bouton pour sélectionner les items
 		var button = Button.new()
 		button.text = "%s x%d" % [item["name"], item["quantity"]]
+		button.pressed.connect(select_item)
 		hbox.add_child(button)
-	
+
+func select_item():
+	print("Ca fonctionne")
 	
 func clear_vbox_container():
 	# Vide complètement l'inventaire

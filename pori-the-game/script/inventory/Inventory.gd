@@ -29,6 +29,7 @@ func add_item(item):
 	
 # Retire un item de l'inventaire
 func remove_item():
+	
 	inventory_updated.emit()
 	
 # Augmente le nombre de slots de l'inventaire dynamiquement
