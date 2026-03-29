@@ -13,6 +13,13 @@ func setup_combat(liste_ennemis):
 
 func _ready():
 	spawn_ennemis()
+	var dict = {"Ennemi1": ennemi1_stats}
+	if ennemi2_stats != null:
+		dict["Ennemi2"] = ennemi2_stats
+		if ennemi3_stats != null:
+			dict["Ennemi3"] = ennemi3_stats
+	dict["Tonar"] = tonar()
+	turnqueue.initialize(dict)
 	# Utile au tests
 	print(ennemi1_stats,ennemi2_stats,ennemi3_stats)
 
@@ -67,5 +74,18 @@ func recup_infos(ennemi):
 	var def = ennemi_stats.def
 	var spd = ennemi_stats.spd
 	var pierre = ennemi_stats.pierre
+	
+	return  [pv, pm, atk, def, spd, pierre]
+	
+	
+func tonar():
+	var tonar_stats = preload("res://script/stats/Tonar.tres")
+	
+	var pv = tonar_stats.pv
+	var pm = tonar_stats.pm
+	var atk = tonar_stats.atk
+	var def = tonar_stats.def
+	var spd = tonar_stats.spd
+	var pierre = tonar_stats.pierre
 	
 	return  [pv, pm, atk, def, spd, pierre]
