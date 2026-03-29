@@ -24,10 +24,10 @@ func _on_inventory_updated():
 		icon.custom_minimum_size = Vector2(64, 64)
 		icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		hbox.add_child(icon)
-		# Crée un texte qui correspond au nom de l'item
-		var label = Label.new()
-		label.text = "%s x%d" % [item["name"], item["quantity"]]
-		hbox.add_child(label)
+		# Crée un bouton pour sélectionner les items
+		var button = Button.new()
+		button.text = "%s x%d" % [item["name"], item["quantity"]]
+		hbox.add_child(button)
 	
 	
 func clear_vbox_container():
