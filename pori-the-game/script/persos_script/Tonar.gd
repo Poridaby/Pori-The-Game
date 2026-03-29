@@ -3,6 +3,9 @@ class_name Player
 
 @onready var interact_ui = $InteractUI
 @onready var inventory_visible = false
+@onready var item_stock = preload("res://scenes/décor_explo/InventoryUI.tscn")
+@onready var inst = item_stock.instantiate()
+@onready var inventory = inst.get_node("Item_Stock")
 
 @export var speed = 400
 @export var stats_class_local: stats_class_player
@@ -27,6 +30,8 @@ var experience_required = get_required_experience(level + 1)
 var next_spawn_name: String = ""
 
 func _ready():
+	add_child(inst)
+	inst.visible = false
 	Inventory.set_player_reference(self)
 	if global_var.next_spawn_name != "":
 		var spawner = get_tree().current_scene.get_node(global_var.next_spawn_name)
@@ -59,10 +64,11 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("inventory"):
 		inventory_visible = !inventory_visible
 		if inventory_visible:
-			$Inventory.visible = true
+			inst.visible = true
 			global_var.player_can_move = false
+			inventory.first_button.call_deferred("grab_focus")
 		else:
-			$Inventory.visible = false
+			inst.visible = false
 			global_var.player_can_move = true
 
 

@@ -3,10 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://dndp7gt4rl71b" path="res://objet/Inv.jpg" id="1_5lgwm"]
 [ext_resource type="Script" uid="uid://bucgjjqq86rb" path="res://script/inventory/Item_Stock.gd" id="1_bd1sv"]
 
-[node name="Inventory" type="Node2D" unique_id=1171652446]
+[node name="Inventory" type="Control" unique_id=829168186]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="Item_Stock" type="Control" parent="." unique_id=922642920]
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -39,5 +41,13 @@ offset_top = 0.19999695
 offset_right = 407.90485
 offset_bottom = 415.2
 
-[node name="ItemList" type="ItemList" parent="Item_Stock/VBoxContainer" unique_id=2041759196]
-layout_mode = 2
+[node name="VBoxContainer2" type="VBoxContainer" parent="Item_Stock" unique_id=828791912]
+layout_mode = 0
+offset_top = 664.0
+offset_right = 1257.0
+offset_bottom = 704.0
+
+[node name="Button" type="Button" parent="Item_Stock" unique_id=942203793]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
