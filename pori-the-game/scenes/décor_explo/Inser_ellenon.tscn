@@ -31,6 +31,9 @@ size = Vector2(162, 456.5)
 [node name="Main" type="Node2D" unique_id=1491841771]
 script = ExtResource("1_8bl4t")
 
+[node name="Joueur_P" parent="." unique_id=964804729 instance=ExtResource("3_0oat6")]
+position = Vector2(900, 512)
+
 [node name="Panneau" parent="." unique_id=390411404 instance=ExtResource("2_qo2l3")]
 position = Vector2(575, 517)
 dialogue = ExtResource("4_beao6")
@@ -84,8 +87,5 @@ item_effect = "soigne 10 pm"
 position = Vector2(1147, 321)
 item_type = "Consomable"
 item_effect = "soigne 10 pv"
-
-[node name="Joueur_P" parent="." unique_id=964804729 instance=ExtResource("3_0oat6")]
-position = Vector2(900, 512)
 
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
