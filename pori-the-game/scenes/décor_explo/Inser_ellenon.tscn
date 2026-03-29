@@ -31,6 +31,18 @@ size = Vector2(162, 456.5)
 [node name="Main" type="Node2D" unique_id=1491841771]
 script = ExtResource("1_8bl4t")
 
+[node name="inventory_item" parent="." unique_id=1143526456 instance=ExtResource("8_beao6")]
+position = Vector2(1147, 321)
+item_type = "Consomable"
+item_effect = "soigne 10 pv"
+
+[node name="inventory_item2" parent="." unique_id=293345233 instance=ExtResource("8_beao6")]
+position = Vector2(751, 329)
+item_type = "Consomable"
+item_name = "potion verte"
+item_texture = ExtResource("8_pvpg1")
+item_effect = "soigne 10 pm"
+
 [node name="Joueur_P" parent="." unique_id=964804729 instance=ExtResource("3_0oat6")]
 position = Vector2(900, 512)
 
@@ -75,17 +87,5 @@ position = Vector2(1269, 502)
 
 [node name="CharacterBody2D2" parent="." unique_id=1377816997 instance=ExtResource("5_qo2l3")]
 position = Vector2(960, 229)
-
-[node name="inventory_item2" parent="." unique_id=293345233 instance=ExtResource("8_beao6")]
-position = Vector2(751, 329)
-item_type = "Consomable"
-item_name = "potion verte"
-item_texture = ExtResource("8_pvpg1")
-item_effect = "soigne 10 pm"
-
-[node name="inventory_item" parent="." unique_id=1143526456 instance=ExtResource("8_beao6")]
-position = Vector2(1147, 321)
-item_type = "Consomable"
-item_effect = "soigne 10 pv"
 
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
