@@ -83,7 +83,6 @@ item_effect = "soigne 10 pm"
 [node name="inventory_item" parent="." unique_id=1143526456 instance=ExtResource("8_beao6")]
 position = Vector2(1147, 321)
 item_type = "Consomable"
-item_name = "potion rouge"
 item_effect = "soigne 10 pv"
 
 [node name="Joueur_P" parent="." unique_id=964804729 instance=ExtResource("3_0oat6")]

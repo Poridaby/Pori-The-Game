@@ -2,19 +2,32 @@
 
 [ext_resource type="PackedScene" uid="uid://bssw6l8yhu13w" path="res://scenes/enemy_combat/ptitcrote.tscn" id="1_x77ld"]
 [ext_resource type="Texture2D" uid="uid://cvr5pl8jlh3a8" path="res://objet/ptitecrote_map.png" id="2_c3r5j"]
+[ext_resource type="Script" uid="uid://dwmplhf0tgeci" path="res://script/mobs_scripts/mob.gd" id="3_slwik"]
 
-[node name="CharacterBody2D" instance=ExtResource("1_x77ld")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_slwik"]
+size = Vector2(68, 45)
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="CharacterBody2D" unique_id=167696280 instance=ExtResource("1_x77ld")]
+position = Vector2(2, -4)
+
+[node name="Sprite2D" parent="." index="0" unique_id=1148318035]
 position = Vector2(-2.0000038, 1.1875048)
 scale = Vector2(2.408, 2.329)
 texture = ExtResource("2_c3r5j")
 
-[node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(-3, 5)
+[node name="CollisionShape2D" parent="." index="1" unique_id=903800473]
+position = Vector2(-2, 4.5)
 
-[node name="CollisionShape2D" parent="Area2D" index="0"]
+[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(903597126) index="0" unique_id=2144408723]
 position = Vector2(-2, 4)
 scale = Vector2(0.53, 0.53)
+
+[node name="Area2D2" type="Area2D" parent="." index="3" unique_id=1414621561]
+script = ExtResource("3_slwik")
+id_combat = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" index="0" unique_id=267462106]
+position = Vector2(-2, 4.5)
+shape = SubResource("RectangleShape2D_slwik")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

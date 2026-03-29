@@ -3,6 +3,27 @@ extends Node
 
 @export var stats_class_local: combat_class
 
+
+func recup_infos(id_combat):
+	
+	# Liste contenant touts les .tres de combats
+	var combats_possibles = [
+		preload("res://script/stats/ressource combat/test.tres"),
+		preload("res://script/stats/ressource combat/ptitcrote_1.tres")
+	]
+
+	# Choisi le bon combat via l'id fourni
+	var combat = combats_possibles[id_combat]
+
+	# Renvoie les infos du combat
+	return [
+		combat.scene,
+		combat.nbr_ennemi,
+		combat.region,
+		combat.ennemi_principal
+	]
+	
+
 # Fonction appelée par les script a chaque moments ou il faut lancer un combat avec LancerCombat.combattre(id_combat)
 func combattre(id_combat):
 
@@ -42,22 +63,3 @@ func combattre(id_combat):
 	get_tree().current_scene.queue_free()
 	get_tree().root.add_child(combat_instance)
 	get_tree().current_scene = combat_instance
-
-
-func recup_infos(id_combat):
-	
-	# Liste contenant touts les .tres de combats
-	var combats_possibles = [
-		preload("res://script/stats/ressource combat/test.tres")
-	]
-
-	# Choisi le bon combat via l'id fourni
-	var combat = combats_possibles[id_combat]
-
-	# Renvoie les infos du combat
-	return [
-		combat.scene,
-		combat.nbr_ennemi,
-		combat.region,
-		combat.ennemi_principal
-	]
