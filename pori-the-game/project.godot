@@ -23,6 +23,7 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 global_var="*res://script/save_script/global_var.gd"
 Inventory="*res://script/inventory/Inventory.gd"
 LancerCombat="*uid://dktw6xvxq7gph"
+turnqueue="*uid://c7s8cy8vmrld5"
 
 [display]
 
