@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bucgjjqq86rb" path="res://script/inventory/Item_Stock.gd" id="1_bd1sv"]
 
 [node name="Inventory" type="Control" unique_id=829168186]
+process_mode = 2
 layout_mode = 3
 anchors_preset = 0
 
@@ -46,8 +47,3 @@ layout_mode = 0
 offset_top = 664.0
 offset_right = 1257.0
 offset_bottom = 704.0
-
-[node name="Button" type="Button" parent="Item_Stock" unique_id=942203793]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
