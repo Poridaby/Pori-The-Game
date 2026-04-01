@@ -11,7 +11,10 @@ func _ready():
 	Inventory.inventory_updated.connect(_on_inventory_updated)
 	_on_inventory_updated()
 	
-	
+func _physics_process(_delta):
+	if Input.is_action_just_pressed("close_inventory"):
+		$"..".visible = false
+		get_tree().paused = false
 
 func _on_inventory_updated():
 	# Vide l'inventaire pour rajouter les items en plus avec leur icone et leur nom

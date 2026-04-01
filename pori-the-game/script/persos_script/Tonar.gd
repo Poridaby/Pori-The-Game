@@ -62,15 +62,10 @@ func _physics_process(_delta):
 		
 	# Ouvre l'inventaire
 	if Input.is_action_just_pressed("inventory"):
-		inventory_visible = !inventory_visible
-		get_tree().paused = inventory.visible
-		if inventory_visible:
-			inst.visible = true
-			global_var.player_can_move = false
-			inventory.first_button.call_deferred("grab_focus")
-		else:
-			inst.visible = false
-			global_var.player_can_move = true
+		get_tree().paused = true
+		inst.visible = true
+		inventory.first_button.call_deferred("grab_focus")
+		
 
 
 	if global_var.player_can_move == true:
