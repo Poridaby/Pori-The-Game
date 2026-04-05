@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://ihq3t6gcflaw" path="res://objet/Tonar_basique.png" id="6_fvwo7"]
 [ext_resource type="PackedScene" uid="uid://3dl20v5d4a6r" path="res://scenes/décor_explo/InventoryUI.tscn" id="7_qntjm"]
 
+[sub_resource type="FontVariation" id="FontVariation_tbt4p"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4q3y"]
 size = Vector2(38, 41)
 
@@ -149,14 +151,46 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qh3kn"]
 
-[sub_resource type="FontVariation" id="FontVariation_tbt4p"]
-
 [node name="Joueur_P" type="CharacterBody2D" unique_id=1748853898 groups=["Player"]]
 texture_filter = 1
 script = ExtResource("1_n1u3g")
 stats_class_local = ExtResource("2_tbt4p")
 metadata/_edit_horizontal_guides_ = [-137.0, -206.0]
 metadata/_edit_group_ = true
+
+[node name="Inventory" parent="." unique_id=1171652446 instance=ExtResource("7_qntjm")]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1419895809]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1620.0
+offset_top = 1030.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0.19215687, 0.3764706, 0.32156864, 0.8392157)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=2034168584]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -11.5
+offset_right = 139.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_tbt4p")
+theme_override_font_sizes/font_size = 16
+text = "Appuyer sur ESPACE pour récupérer"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=288415440]
 position = Vector2(2, 10.5)
@@ -178,38 +212,3 @@ position = Vector2(2.4099731, 113)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2009471718]
 shape = SubResource("RectangleShape2D_qh3kn")
-
-[node name="InteractUI" type="CanvasLayer" parent="." unique_id=353069744]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="InteractUI" unique_id=1419895809]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -300.0
-offset_top = -50.0
-grow_horizontal = 0
-grow_vertical = 0
-color = Color(0.19215687, 0.3764706, 0.32156864, 0.8392157)
-
-[node name="Label" type="Label" parent="InteractUI/ColorRect" unique_id=2034168584]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -139.0
-offset_top = -11.5
-offset_right = 139.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = SubResource("FontVariation_tbt4p")
-theme_override_font_sizes/font_size = 16
-text = "Appuyer sur ESPACE pour récupérer"
-
-[node name="Inventory" parent="." unique_id=1171652446 instance=ExtResource("7_qntjm")]
-visible = false

@@ -53,9 +53,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lm4tb"]
+radius = 168.0
+height = 336.0
+
 [node name="PersoLampe" type="CharacterBody2D" unique_id=203937293]
 script = ExtResource("1_lm4tb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1243049357]
 sprite_frames = SubResource("SpriteFrames_8x06r")
 frame_progress = 0.15056655
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2008919411]
+shape = SubResource("CapsuleShape2D_lm4tb")

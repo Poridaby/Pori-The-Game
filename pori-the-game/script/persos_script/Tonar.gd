@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-@onready var interact_ui = $InteractUI
+@onready var color_rect = $ColorRect
 @onready var inventory_visible = false
 @onready var item_stock = preload("res://scenes/décor_explo/InventoryUI.tscn")
 @onready var inst = item_stock.instantiate()
@@ -85,10 +85,8 @@ func _physics_process(_delta):
 		elif vel.length() == 0:
 			$AnimatedSprite2D.stop()
 		velocity = vel
-		# move_and_slide() gère automatiquement les collisions
-		# et empêche le personnage de traverser un StaticBody2D
+		# move_and_slide() gère automatiquement les collisions et empêche le personnage de traverser un StaticBody2D
 		move_and_slide()
-
 	else:
 		$AnimatedSprite2D.stop()
 		
