@@ -70,27 +70,30 @@ func _physics_process(_delta):
 
 	if global_var.player_can_move == true:
 	#Endroit qui permet de déclencher ou non l'animation
-		if vel.length() > 0:
+		if vel.y < 0:
 			vel = vel.normalized() * speed
-			$AnimatedSprite2D.play()
-		else:
+			$AnimatedSprite2D.play("avance_arrière")
+		elif vel.y > 0:
+			vel = vel.normalized() * speed
+			$AnimatedSprite2D.play("avance_devant")
+		elif vel.x < 0:
+			vel = vel.normalized() * speed
+			$AnimatedSprite2D.play("avance_gauche")
+		elif vel.x > 0:
+			vel = vel.normalized() * speed
+			$AnimatedSprite2D.play("avance_droite")
+		elif vel.length() == 0:
 			$AnimatedSprite2D.stop()
 		velocity = vel
 		# move_and_slide() gère automatiquement les collisions
 		# et empêche le personnage de traverser un StaticBody2D
 		move_and_slide()
 
-		# Si déplacement horizontal
-		if vel.x != 0:
-			$AnimatedSprite2D.animation = "marche"
-			# Retourne le sprite si on va à gauche
-			$AnimatedSprite2D.flip_h = vel.x < 0  
-		# Sinon si déplacement vertical  
-		elif vel.y != 0:                    
-			$AnimatedSprite2D.animation = "haut"
-
 	else:
 		$AnimatedSprite2D.stop()
+		
+
+	
 
 
 
