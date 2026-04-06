@@ -45,6 +45,9 @@ func _physics_process(_delta):
 	:param _delta: a laisser, jamais utilisé mais obligatoire pour que la fonction soit reconnue
 	:comportement: déplacement du personnage lors de l'utilisation des touches
 	"""
+	
+	var dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	
 	# Test du système de combat
 	if Input.is_action_just_pressed("debug"):
 		LancerCombat.combattre(0)
@@ -69,27 +72,34 @@ func _physics_process(_delta):
 
 
 	if global_var.player_can_move == true:
+		if dir != Vector2.ZERO:
+			vel = dir.normalized() * speed
 	#Endroit qui permet de déclencher ou non l'animation
-		if vel.y < 0:
-			vel = vel.normalized() * speed
-			$AnimatedSprite2D.play("avance_arrière")
-		elif vel.y > 0:
-			vel = vel.normalized() * speed
-			$AnimatedSprite2D.play("avance_devant")
-		elif vel.x < 0:
-			vel = vel.normalized() * speed
-			$AnimatedSprite2D.play("avance_gauche")
-		elif vel.x > 0:
-			vel = vel.normalized() * speed
-			$AnimatedSprite2D.play("avance_droite")
-		elif vel.length() == 0:
+			if dir.y < 0:
+				vel = dir.normalized() * speed
+				if $AnimatedSprite2D.animation != "avance_arrière":
+					$AnimatedSprite2D.play("avance_arrière")
+
+			elif dir.y > 0:
+				vel = dir.normalized() * speed
+				if $AnimatedSprite2D.animation != "avance_devant":
+					$AnimatedSprite2D.play("avance_devant")
+
+			elif dir.x < 0:
+				vel = dir.normalized() * speed
+				if $AnimatedSprite2D.animation != "avance_gauche":
+					$AnimatedSprite2D.play("avance_gauche")
+
+			elif dir.x > 0:
+				vel = dir.normalized() * speed
+				if $AnimatedSprite2D.animation != "avance_droite":
+					$AnimatedSprite2D.play("avance_droite")
+		else:
+			vel = Vector2.ZERO
 			$AnimatedSprite2D.stop()
 		velocity = vel
 		# move_and_slide() gère automatiquement les collisions et empêche le personnage de traverser un StaticBody2D
 		move_and_slide()
-	else:
-		$AnimatedSprite2D.stop()
-		
 
 	
 
