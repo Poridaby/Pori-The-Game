@@ -10,6 +10,11 @@ class_name Player
 @export var speed = 400
 @export var stats_class_local: stats_class_player
 
+@onready var animated_sprite = $AnimatedSprite2D
+var last_anim_name = ""
+var last_direction := Vector2.DOWN
+var idle_timer := 0.0
+var idle_delay := 0.1 # 100 ms
 
 # Stats du personage
 #var pv_max = Stats.pv_max
@@ -42,8 +47,6 @@ func _ready():
 func _physics_process(_delta):
 	"""
 	Assigne les touches de déplacement
-	:param _delta: a laisser, jamais utilisé mais obligatoire pour que la fonction soit reconnue
-	:comportement: déplacement du personnage lors de l'utilisation des touches
 	"""
 	
 	var dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -52,54 +55,54 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("debug"):
 		LancerCombat.combattre(0)
 		
-	# Assigne 1 velocité par touches
-	var vel = Vector2.ZERO
-	if Input.is_action_pressed("move_right"):
-		vel.x += 1
-	if Input.is_action_pressed("move_left"):
-		vel.x -= 1
-	if Input.is_action_pressed("move_up"):
-		vel.y -= 1
-	if Input.is_action_pressed("move_down"):
-		vel.y += 1
-		
 	# Ouvre l'inventaire
 	if Input.is_action_just_pressed("inventory"):
 		get_tree().paused = true
 		inst.visible = true
 		inventory.first_button.call_deferred("grab_focus")
-		
 
-
-	if global_var.player_can_move == true:
+	if global_var.player_can_move:
 		if dir != Vector2.ZERO:
-			vel = dir.normalized() * speed
-	#Endroit qui permet de déclencher ou non l'animation
+			idle_timer = 0.0
+			# Normalise et applique la vitesse UNE FOIS
+			velocity = dir.normalized() * speed
+			last_direction = dir
+			
+			# Détermine l'animation en fonction de la direction
+			var anim_name = ""
 			if dir.y < 0:
-				vel = dir.normalized() * speed
-				if $AnimatedSprite2D.animation != "avance_arrière":
-					$AnimatedSprite2D.play("avance_arrière")
-
+				anim_name = "avance_arrière"
 			elif dir.y > 0:
-				vel = dir.normalized() * speed
-				if $AnimatedSprite2D.animation != "avance_devant":
-					$AnimatedSprite2D.play("avance_devant")
-
+				anim_name = "avance_devant"
 			elif dir.x < 0:
-				vel = dir.normalized() * speed
-				if $AnimatedSprite2D.animation != "avance_gauche":
-					$AnimatedSprite2D.play("avance_gauche")
-
+				anim_name = "avance_gauche"
 			elif dir.x > 0:
-				vel = dir.normalized() * speed
-				if $AnimatedSprite2D.animation != "avance_droite":
-					$AnimatedSprite2D.play("avance_droite")
+				anim_name = "avance_droite"
+			
+			if animated_sprite.animation != anim_name:
+				animated_sprite.play(anim_name)
+				
 		else:
-			vel = Vector2.ZERO
-			$AnimatedSprite2D.stop()
-		velocity = vel
-		# move_and_slide() gère automatiquement les collisions et empêche le personnage de traverser un StaticBody2D
-		move_and_slide()
+			idle_timer += _delta
+			velocity = Vector2.ZERO
+			
+			if idle_timer >= idle_delay:
+				var idle_anim = ""
+				if last_direction.y < 0:
+					idle_anim = "idle_arrière"
+				elif last_direction.y > 0:
+					idle_anim = "idle_devant"
+				elif last_direction.x < 0:
+					idle_anim = "idle_gauche"
+				elif last_direction.x > 0:
+					idle_anim = "idle_droite"
+			
+				if animated_sprite.animation != idle_anim:
+					animated_sprite.play(idle_anim)
+		
+	
+	# move_and_slide() gère automatiquement les collisions
+	move_and_slide()
 
 	
 
