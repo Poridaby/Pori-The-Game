@@ -163,7 +163,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"avance_arrière",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -180,7 +180,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"avance_devant",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -197,7 +197,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"avance_droite",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -214,7 +214,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"avance_gauche",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -336,7 +336,7 @@ shape = SubResource("RectangleShape2D_n4q3y")
 position = Vector2(0.5, 0.5)
 scale = Vector2(0.238, 0.237)
 sprite_frames = SubResource("SpriteFrames_n4q3y")
-animation = &"idle_droite"
+animation = &"avance_arrière"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1024972923]
 zoom = Vector2(1.5, 1.5)
