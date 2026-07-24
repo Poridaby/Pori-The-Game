@@ -43,10 +43,11 @@ func _on_inventory_updated():
 		hbox.add_child(button)
 
 func select_item(itemm):
-	clear_vbox_label()
-	var label = Label.new()
-	label.text =  "{0}:  {1}".format([itemm["name"], itemm["effect"]])
-	vbox_label.add_child(label)
+	Inventory.remove_item(itemm)
+	#clear_vbox_label()
+	#var label = Label.new()
+	#label.text =  "{0}:  {1}".format([itemm["name"], itemm["effect"]])
+	#vbox_label.add_child(label)
 	
 func clear_vbox_container():
 	# Vide complètement l'inventaire

@@ -28,9 +28,22 @@ func add_item(item):
 	return false
 	
 # Retire un item de l'inventaire
-func remove_item():
-	
-	inventory_updated.emit()
+func remove_item(item, amount:=1):
+	for i in range(inventory.size()):
+		if inventory[i] != null \
+		and inventory[i]["type"] == item["type"] \
+		and inventory[i]["effect"] == item["effect"]:
+
+			inventory[i]["quantity"] -= amount
+
+			# Si il n'en reste plus, on vide la case
+			if inventory[i]["quantity"] <= 0:
+				inventory[i] = null
+
+			inventory_updated.emit()
+			return true
+
+	return false
 	
 # Augmente le nombre de slots de l'inventaire dynamiquement
 func increase_inventory_size():
