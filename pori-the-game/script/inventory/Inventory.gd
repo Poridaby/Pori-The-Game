@@ -49,6 +49,6 @@ func remove_item(item, amount:=1):
 func increase_inventory_size():
 	inventory_updated.emit()
 
-
+# Référence de la variable joueur
 func set_player_reference(player):
 	player_node = player

@@ -2,6 +2,43 @@
 
 [ext_resource type="Texture2D" uid="uid://dndp7gt4rl71b" path="res://objet/Inv.jpg" id="1_5lgwm"]
 [ext_resource type="Script" uid="uid://bucgjjqq86rb" path="res://script/inventory/Item_Stock.gd" id="1_bd1sv"]
+[ext_resource type="Texture2D" uid="uid://gvc2hixja4h8" path="res://objet/Tonar_stop_1-ezgif.com-gif-to-sprite-converter.png" id="3_035ql"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_my73s"]
+atlas = ExtResource("3_035ql")
+region = Rect2(0, 0, 322, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojxro"]
+atlas = ExtResource("3_035ql")
+region = Rect2(322, 0, 322, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7onq"]
+atlas = ExtResource("3_035ql")
+region = Rect2(644, 0, 322, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxsp7"]
+atlas = ExtResource("3_035ql")
+region = Rect2(966, 0, 322, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_magc2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_my73s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojxro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7onq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxsp7")
+}],
+"loop": true,
+"name": &"Tonar_anim_inv",
+"speed": 5.0
+}]
 
 [node name="Inventory" type="Control" unique_id=829168186]
 process_mode = 2
@@ -47,3 +84,9 @@ layout_mode = 0
 offset_top = 664.0
 offset_right = 1257.0
 offset_bottom = 704.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Item_Stock" unique_id=1024533233]
+position = Vector2(127, 91.5)
+scale = Vector2(0.48447204, 0.515625)
+sprite_frames = SubResource("SpriteFrames_magc2")
+animation = &"Tonar_anim_inv"

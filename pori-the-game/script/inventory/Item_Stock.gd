@@ -11,6 +11,9 @@ func _ready():
 	Inventory.inventory_updated.connect(_on_inventory_updated)
 	_on_inventory_updated()
 	
+func _physics_process(_delta):
+	$AnimatedSprite2D.play("Tonar_anim_inv")
+	
 func _input(event):
 	if event.is_action_pressed("close_inventory"):
 		get_tree().paused = false
