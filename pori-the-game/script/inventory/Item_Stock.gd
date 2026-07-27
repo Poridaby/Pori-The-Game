@@ -12,7 +12,7 @@ func _ready():
 	_on_inventory_updated()
 	
 func _physics_process(_delta):
-	$AnimatedSprite2D.play("Tonar_anim_inv")
+	$Button/AnimatedSprite2D.play("Tonar_anim_inv")
 	
 func _input(event):
 	if event.is_action_pressed("close_inventory"):
@@ -46,7 +46,8 @@ func _on_inventory_updated():
 		hbox.add_child(button)
 
 func select_item(itemm):
-	Inventory.remove_item(itemm)
+	$Button.grab_focus()
+	#Inventory.remove_item(itemm)
 	#clear_vbox_label()
 	#var label = Label.new()
 	#label.text =  "{0}:  {1}".format([itemm["name"], itemm["effect"]])

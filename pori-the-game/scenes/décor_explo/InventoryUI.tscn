@@ -85,8 +85,15 @@ offset_top = 664.0
 offset_right = 1257.0
 offset_bottom = 704.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Item_Stock" unique_id=1024533233]
-position = Vector2(127, 91.5)
+[node name="Button" type="Button" parent="Item_Stock" unique_id=732840635]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 9.0
+offset_right = 255.0
+offset_bottom = 178.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Item_Stock/Button" unique_id=1024533233]
+position = Vector2(104, 83)
 scale = Vector2(0.48447204, 0.515625)
 sprite_frames = SubResource("SpriteFrames_magc2")
 animation = &"Tonar_anim_inv"
