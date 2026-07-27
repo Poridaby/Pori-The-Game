@@ -35,7 +35,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dxsp7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Tonar_anim_inv",
 "speed": 5.0
 }]
@@ -92,8 +92,8 @@ offset_top = 9.0
 offset_right = 255.0
 offset_bottom = 178.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Item_Stock/Button" unique_id=1024533233]
-position = Vector2(104, 83)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Item_Stock" unique_id=1024533233]
+position = Vector2(147, 92)
 scale = Vector2(0.48447204, 0.515625)
 sprite_frames = SubResource("SpriteFrames_magc2")
 animation = &"Tonar_anim_inv"
