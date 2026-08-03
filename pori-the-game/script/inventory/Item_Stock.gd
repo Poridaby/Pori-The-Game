@@ -3,7 +3,8 @@ class_name InventoryUI
 
 @onready var vbox_container = $VBoxContainer
 @onready var vbox_label = $VBoxContainer2
-var first_button : Button 
+var first_button : Button
+var item_select 
 
 
 func _ready():
@@ -11,6 +12,7 @@ func _ready():
 	Inventory.inventory_updated.connect(_on_inventory_updated)
 	_on_inventory_updated()
 	$Button.visible = false
+	$Button.pressed.connect(_button_pressed)
 	
 func _physics_process(_delta):
 	$AnimatedSprite2D.play("Tonar_anim_inv")
@@ -46,14 +48,24 @@ func _on_inventory_updated():
 		button.pressed.connect(select_item.bind(item))
 		hbox.add_child(button)
 
-func select_item(itemm):
+func select_item(item):
 	$Button.visible = true
 	$Button.grab_focus()
-	#Inventory.remove_item(itemm)
-	#clear_vbox_label()
-	#var label = Label.new()
-	#label.text =  "{0}:  {1}".format([itemm["name"], itemm["effect"]])
-	#vbox_label.add_child(label)
+	item_select = item
+	
+	
+func _button_pressed():
+	print("Avant PV:", global_var.Tonar_stats.pv)
+	print("Avant PM:", global_var.Tonar_stats.pm)
+	match item_select["effect"]:
+		"heal_pv":
+			global_var.Tonar_stats.pv = min(global_var.Tonar_stats.pv + item_select["effect_value"], global_var.Tonar_stats.pv_max)
+		"heal_pm":
+			global_var.Tonar_stats.pm = min(global_var.Tonar_stats.pm + item_select["effect_value"], global_var.Tonar_stats.pm_max)
+	print("Après PV", global_var.Tonar_stats.pv)
+	print("Après PM", global_var.Tonar_stats.pm)
+	Inventory.remove_item(item_select)
+	$Button.visible = false
 	
 func clear_vbox_container():
 	# Vide complètement l'inventaire

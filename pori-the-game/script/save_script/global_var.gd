@@ -11,3 +11,6 @@ var next_spawn_name: String = ""
 
 # Variable de la position du joueur
 var player_position = {}
+
+# Stats de Tonar dupliqué
+var Tonar_stats = preload("res://script/stats/Tonar.tres").duplicate(true)

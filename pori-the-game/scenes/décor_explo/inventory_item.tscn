@@ -11,7 +11,8 @@ script = ExtResource("1_yr1or")
 item_type = "Consumable"
 item_name = "potion rouge"
 item_texture = ExtResource("1_l4yeh")
-item_effect = "heal 10 pv"
+item_effect = "heal_pv"
+item_effect_value = 10
 
 [node name="Area2D" type="Area2D" parent="." unique_id=370886213]
 
