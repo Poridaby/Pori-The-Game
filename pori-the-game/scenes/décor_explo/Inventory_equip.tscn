@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c6ht0a4uareo1"]
+
+[ext_resource type="Script" uid="uid://s33nap5h6xey" path="res://script/inventory/Inventory_equip.gd" id="1_67vnu"]
+[ext_resource type="Texture2D" uid="uid://bp81sb74o7tiw" path="res://objet/equipement_item.png" id="1_oxd57"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lg8p2"]
+size = Vector2(21, 26)
+
+[node name="Inventory_equip" type="Node2D" unique_id=242430520]
+script = ExtResource("1_67vnu")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=404699124]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=170735154]
+position = Vector2(0.5, 3)
+shape = SubResource("RectangleShape2D_lg8p2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1201737073]
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("1_oxd57")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
