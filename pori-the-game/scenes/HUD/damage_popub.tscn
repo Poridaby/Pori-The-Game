@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://471oqfg75prg"]
+
+[ext_resource type="Script" uid="uid://b7wfityaaf7nd" path="res://damage_popub.gd" id="1_ad6jk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m0qtu"]
+font_size = 48
+font_color = Color(1, 0, 0, 1)
+
+[node name="DamagePopub" type="Label" unique_id=343236964]
+offset_right = 642.0
+offset_bottom = 254.0
+text = "-0"
+label_settings = SubResource("LabelSettings_m0qtu")
+script = ExtResource("1_ad6jk")

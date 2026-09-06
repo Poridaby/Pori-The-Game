@@ -1,16 +1,7 @@
 extends Node
 
-# Décide si le joueur a le droit de bouger
 var player_can_move = true
-
-# Texte a afficher dans la boite de dialogue
 var texte_dialogue = "Ereur"
-
-# Choisi le bon point de spawn après la prise d'une warp
 var next_spawn_name: String = ""
-
-# Variable de la position du joueur
 var player_position = {}
-
-# Stats de Tonar dupliqué
 var Tonar_stats = preload("res://script/stats/Tonar.tres").duplicate(true)
