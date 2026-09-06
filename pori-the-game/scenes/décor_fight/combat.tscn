@@ -9,9 +9,6 @@
 [ext_resource type="Script" uid="uid://c7s8cy8vmrld5" path="res://script/combat/TurnQueue.gd" id="7_ltln3"]
 [ext_resource type="Texture2D" uid="uid://cc48d0i2i47uo" path="res://objet/boutton_fuir.png" id="7_n0ibx"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_m0qtu"]
-font_size = 40
-
 [node name="Combat" type="Node2D" unique_id=355659430]
 position = Vector2(0, -1)
 script = ExtResource("1_y7dlq")
@@ -156,23 +153,6 @@ offset_top = 464.0
 offset_right = 2500.0
 offset_bottom = 731.0
 text = "Continue ?"
-
-[node name="FinishOverlay" type="Control" parent="." unique_id=2005171752]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -440.0
-offset_top = -37.0
-offset_right = 2432.0
-offset_bottom = 1135.0
-
-[node name="FinishLabel" type="Label" parent="FinishOverlay" unique_id=1077946914]
-layout_mode = 0
-offset_left = 1.0
-offset_right = 2866.0
-offset_bottom = 1170.0
-label_settings = SubResource("LabelSettings_m0qtu")
-
-[node name="DamagePopupManager" type="Node" parent="." unique_id=613501254]
 
 [node name="TonarTarget" type="Node2D" parent="." unique_id=953571315]
 position = Vector2(269, 248)

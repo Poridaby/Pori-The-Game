@@ -95,6 +95,7 @@ func start_combat():
 	turn_queue_ref.play_turn()
 
 # ====== SPAWN ======
+# ====== SPAWN ======
 func spawn_ennemis():
 	var spawners = $Spawners_ennemi.get_children()
 	if spawners.is_empty():
@@ -114,6 +115,13 @@ func spawn_ennemis():
 		var key = "Ennemi" + str(i+1)
 		combattants[key] = mob_instance
 		add_child(mob_instance)
+		
+		# Déplacer l'ennemi derrière EndScreen (s'il existe)
+		if end_screen != null:
+			# end_screen.get_index() donne l'index actuel de EndScreen,
+			# on place l'ennemi juste avant lui.
+			move_child(mob_instance, end_screen.get_index())
+		
 		stats.append(recup_infos(mob_name))
 
 	if stats.size() > 0: ennemi1_stats = stats[0]
