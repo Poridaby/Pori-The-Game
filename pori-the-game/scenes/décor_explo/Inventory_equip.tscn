@@ -6,8 +6,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lg8p2"]
 size = Vector2(21, 26)
 
-[node name="Inventory_equip" type="Node2D" unique_id=242430520]
+[node name="Inventory_equip" type="Node2D" unique_id=242430520 groups=["items"]]
 script = ExtResource("1_67vnu")
+item_type = "Equipement"
+item_name = "Gilet"
+item_texture = ExtResource("1_oxd57")
+item_stat = "def"
+item_stat_value = 5
 
 [node name="Area2D" type="Area2D" parent="." unique_id=404699124]
 
@@ -17,7 +22,6 @@ shape = SubResource("RectangleShape2D_lg8p2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1201737073]
 scale = Vector2(0.13, 0.13)
-texture = ExtResource("1_oxd57")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -5,8 +5,9 @@ extends Node2D
 @export var item_type = ""
 @export var item_name = ""
 @export var item_texture: Texture
-@export var item_effect = ""
-@export var item_effect_value: int
+@export var item_stat = ""
+@export var item_stat_value: int
+@export var item_equiped = false
 var scene_path: String = "res://scenes/décor_explo/Inventory_equip.tscn"
 
 # Réference du node de scène
@@ -32,14 +33,15 @@ func _process(_delta):
 
 # Ajoute l'item dans l'inventaire
 func pickup_item():
-	print("item_effect =", item_effect)
+	print("item_effect =", item_stat)
 	var item = {
 		"quantity": 1,
 		"type": item_type,
 		"name": item_name,
 		"texture": item_texture,
-		"effect": item_effect,
-		"effect_value": item_effect_value,
+		"stat": item_stat,
+		"stat_value": item_stat_value,
+		"equiped": item_equiped,
 		"scene_path": scene_path
 	}
 	if Inventory.player_node:

@@ -79,6 +79,19 @@ offset_top = 0.19999695
 offset_right = 407.90485
 offset_bottom = 415.2
 
+[node name="VBoxContainer3" type="VBoxContainer" parent="Item_Stock" unique_id=1318858493]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.057000004
+anchor_top = 0.275
+anchor_right = 0.057000004
+anchor_bottom = 0.275
+offset_left = -0.0951767
+offset_top = 0.19999695
+offset_right = 407.90485
+offset_bottom = 415.2
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="Item_Stock" unique_id=828791912]
 layout_mode = 0
 offset_top = 664.0
@@ -97,3 +110,19 @@ position = Vector2(147, 92)
 scale = Vector2(0.48447204, 0.515625)
 sprite_frames = SubResource("SpriteFrames_magc2")
 animation = &"Tonar_anim_inv"
+
+[node name="Button2" type="Button" parent="Item_Stock" unique_id=1957529097]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 197.0
+offset_right = 596.0
+offset_bottom = 308.0
+text = "Objet"
+
+[node name="Button3" type="Button" parent="Item_Stock" unique_id=888254886]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 314.0
+offset_right = 596.0
+offset_bottom = 425.0
+text = "Equipement"

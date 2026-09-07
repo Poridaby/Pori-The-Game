@@ -8,7 +8,7 @@ radius = 13.038404
 
 [node name="inventory_item" type="Node2D" unique_id=1619124045 groups=["items"]]
 script = ExtResource("1_yr1or")
-item_type = "Consumable"
+item_type = "Consomable"
 item_name = "potion rouge"
 item_texture = ExtResource("1_l4yeh")
 item_effect = "heal_pv"

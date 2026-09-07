@@ -21,7 +21,7 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 [autoload]
 
 global_var="*res://script/save_script/global_var.gd"
-Inventory="*res://script/inventory/Inventory.gd"
+Inventory="*uid://c0cwumidechn"
 LancerCombat="*uid://dktw6xvxq7gph"
 turnqueue="*uid://c7s8cy8vmrld5"
 

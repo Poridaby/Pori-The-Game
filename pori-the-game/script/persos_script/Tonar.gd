@@ -59,7 +59,7 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("inventory"):
 		get_tree().paused = true
 		inst.visible = true
-		inventory.first_button.call_deferred("grab_focus")
+		inst.get_node("Item_Stock/Button2").call_deferred("grab_focus")
 
 	if global_var.player_can_move:
 		if dir != Vector2.ZERO:
