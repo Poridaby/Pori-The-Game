@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://5ty87durrge7"]
+
+[ext_resource type="Texture2D" uid="uid://bsh3nnx8wac5h" path="res://objet/clé.png" id="1_u1676"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lg8p2"]
+
+[node name="Inventory_clé" type="Node2D" unique_id=198774498 groups=["items"]]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=298094265]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=586910005]
+shape = SubResource("RectangleShape2D_lg8p2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1932174806]
+texture_filter = 1
+texture = ExtResource("1_u1676")

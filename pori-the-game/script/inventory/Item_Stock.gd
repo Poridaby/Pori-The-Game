@@ -3,6 +3,7 @@ class_name InventoryUI
 
 @onready var vbox_objet = $VBoxContainer
 @onready var vbox_equipement = $VBoxContainer3
+@onready var vbox_cle = $VBoxContainer4
 @onready var vbox_label = $VBoxContainer2
 var item_select
 
@@ -110,6 +111,7 @@ func _button_pressed():
 					print(global_var.Tonar_stats.def)
 				"atk":
 					global_var.Tonar_stats.atk -= item_select["stat_value"]
+					print(global_var.Tonar_stats.atk)
 				"spd":
 					global_var.Tonar_stats.spd -= item_select["stat_value"]
 			item_select["equiped"] = false

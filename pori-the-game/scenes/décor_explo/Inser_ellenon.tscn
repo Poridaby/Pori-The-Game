@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://whudlq5kq5v6" path="res://script/dialog_box_script/dialogues/test_panneau_1.tres" id="4_beao6"]
 [ext_resource type="Resource" uid="uid://c1yqbnap2q4d8" path="res://script/dialog_box_script/dialogues/test_dialogue_2.tres" id="5_pvpg1"]
 [ext_resource type="PackedScene" uid="uid://wghtx6lijqrb" path="res://scenes/enemy_explo/Carotte_maléfique.tscn" id="5_qo2l3"]
+[ext_resource type="PackedScene" uid="uid://5ty87durrge7" path="res://scenes/décor_explo/Inventory_cle.tscn" id="6_cs323"]
 [ext_resource type="PackedScene" uid="uid://stiowdkn63b8" path="res://scenes/décor_explo/inventory_item.tscn" id="8_beao6"]
 [ext_resource type="Texture2D" uid="uid://b22vxog54aqkb" path="res://objet/potion_verte.png" id="8_pvpg1"]
 [ext_resource type="PackedScene" uid="uid://cdmie5pgfthjk" path="res://scenes/enemy_explo/perso lampe.tscn" id="9_4x2r7"]
@@ -42,18 +43,20 @@ item_equiped = null
 position = Vector2(1300, 324)
 item_name = "épée"
 item_texture = ExtResource("3_wlq35")
+item_stat = "atk"
 item_equiped = null
 
 [node name="inventory_item" parent="." unique_id=1143526456 instance=ExtResource("8_beao6")]
 position = Vector2(1147, 321)
-item_type = "Consomable"
 
 [node name="inventory_item2" parent="." unique_id=293345233 instance=ExtResource("8_beao6")]
 position = Vector2(751, 329)
-item_type = "Consomable"
 item_name = "potion verte"
 item_texture = ExtResource("8_pvpg1")
 item_effect = "heal_pm"
+
+[node name="Inventory_clé" parent="." unique_id=198774498 instance=ExtResource("6_cs323")]
+position = Vector2(973, 377)
 
 [node name="Panneau" parent="." unique_id=390411404 instance=ExtResource("2_qo2l3")]
 position = Vector2(575, 517)
