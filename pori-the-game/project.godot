@@ -36,6 +36,10 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="Pori The Game"
 
+[global_group]
+
+items=""
+
 [importer_defaults]
 
 animation_library={
