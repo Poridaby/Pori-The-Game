@@ -18,42 +18,15 @@ func _ready():
 	inventory_cle.resize(100)
 	
 # Rajoute un item dans l'inventaire
-func add_item(item):
-	if item["type"] == "Consomable":
-		for i in range(inventory.size()):
+func add_item(item, inventaire):
+		for i in range(inventaire.size()):
 			# Check si l'item existe dans l'inventaire et matche avec le type et l'effet
-			if inventory[i] != null and inventory[i]["type"] == item["type"] and inventory[i]["effect"] == item["effect"] and inventory[i]["name"] == item["name"]:
-				inventory[i]["quantity"] += item["quantity"]
-				print("l'item est ", inventory)
+			if inventaire[i] != null and inventaire[i]["type"] == item["type"] and inventaire[i]["effect"] == item["effect"] and inventaire[i]["name"] == item["name"]:
+				inventaire[i]["quantity"] += item["quantity"]
 				inventory_updated.emit()
 				return true
-			elif inventory[i] == null:
-				inventory[i] = item
-				print("l'item est bien pris", inventory)
-				inventory_updated.emit()
-				return true
-		return false
-	elif item["type"] == "Equipement":
-		for i in range(inventory_equipement.size()):
-			# Check si l'item existe dans l'inventaire et matche avec le type et l'effet
-			if inventory_equipement[i] != null and inventory_equipement[i]["type"] == item["type"] and inventory_equipement[i]["stat"] == item["stat"] and inventory_equipement[i]["name"] == item["name"]:
-				inventory_equipement[i]["quantity"] += item["quantity"]
-				inventory_updated.emit()
-				return true
-			elif inventory_equipement[i] == null:
-				inventory_equipement[i] = item
-				inventory_updated.emit()
-				return true
-		return false
-	elif item["type"] == "Cle":
-		for i in range(inventory_cle.size()):
-			# Check si l'item existe dans l'inventaire et matche avec le type et l'effet
-			if inventory_cle[i] != null and inventory_cle[i]["type"] == item["type"] and inventory_cle[i]["effect"] == item["effect"] and inventory_cle[i]["name"] == item["name"]:
-				inventory_cle[i]["quantity"] += item["quantity"]
-				inventory_updated.emit()
-				return true
-			elif inventory_cle[i] == null:
-				inventory_cle[i] = item
+			elif inventaire[i] == null:
+				inventaire[i] = item
 				inventory_updated.emit()
 				return true
 		return false

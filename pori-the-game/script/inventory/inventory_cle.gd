@@ -41,7 +41,7 @@ func pickup_item():
 		"scene_path": scene_path
 	}
 	if Inventory.player_node:
-		Inventory.add_item(item)
+		Inventory.add_item(item, Inventory.inventory_cle)
 		self.queue_free()
 		
 # Si le joueur est dans la zone de collision de l'item, alors il peut le prendre
