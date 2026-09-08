@@ -104,7 +104,7 @@ func _button_pressed():
 	print("Avant PM:", global_var.Tonar_stats.pm)
 	if item_select["type"] == "Consomable":
 		clear_vbox_label(vbox_label)
-		popup_invent("Vous avez consommé l'item !", "")
+		popup_invent("Tonar a bien été soigné !", "")
 		clear_vbox_label(vbox_info)
 		match item_select["effect"]:
 			"heal_pv":
