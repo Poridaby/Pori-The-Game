@@ -89,12 +89,14 @@ func item_unfocus():
 	clear_vbox_label(vbox_info)
 
 func select_item(item):
+	print("le bouton est appuyé")
 	if item["type"] == "Cle":
 		clear_vbox_label(vbox_info)
 		popup_invent("", item["effect"])
 		return
 	$Button.visible = true
 	$Button.grab_focus()
+	item_focus(item)
 	item_select = item
 	
 func _button_pressed():
@@ -102,7 +104,8 @@ func _button_pressed():
 	print("Avant PM:", global_var.Tonar_stats.pm)
 	if item_select["type"] == "Consomable":
 		clear_vbox_label(vbox_label)
-		popup_invent("Vous avez consommé l'item !", item_select["effect"])
+		popup_invent("Vous avez consommé l'item !", "")
+		clear_vbox_label(vbox_info)
 		match item_select["effect"]:
 			"heal_pv":
 				global_var.Tonar_stats.pv = min(global_var.Tonar_stats.pv + item_select["effect_value"], global_var.Tonar_stats.pv_max)
@@ -116,7 +119,8 @@ func _button_pressed():
 	elif item_select["type"] == "Equipement":
 		if not item_select["equiped"]:
 			clear_vbox_label(vbox_label)
-			popup_invent("L'équipement a été équipé !", item_select["effect"])
+			popup_invent("L'équipement a été équipé !", "")
+			clear_vbox_label(vbox_info)
 			match item_select["stat"]:
 				"def":
 					print(global_var.Tonar_stats.def)
@@ -128,9 +132,12 @@ func _button_pressed():
 					global_var.Tonar_stats.atk += item_select["stat_value"]
 					item_select["equiped"] = true
 					print(global_var.Tonar_stats.atk)
+			$Button.visible = false
+			$Button3.call_deferred("grab_focus")
 		else:
 			clear_vbox_label(vbox_label)
-			popup_invent("L'équipement a été retiré !", item_select["effect"])
+			popup_invent("L'équipement a été retiré !", "")
+			clear_vbox_label(vbox_info)
 			match item_select["stat"]:
 				"def":
 					global_var.Tonar_stats.def -= item_select["stat_value"]
@@ -141,21 +148,27 @@ func _button_pressed():
 				"spd":
 					global_var.Tonar_stats.spd -= item_select["stat_value"]
 			item_select["equiped"] = false
+			$Button.visible = false
+			$Button3.call_deferred("grab_focus")
+			
 	
 func _button2_pressed():
 	clear_vbox_label(vbox_info)
+	clear_vbox_label(vbox_label)
 	$VBoxContainer.visible = true
 	$VBoxContainer4.visible = false
 	$VBoxContainer3.visible = false
 	
 func _button3_pressed():
 	clear_vbox_label(vbox_info)
+	clear_vbox_label(vbox_label)
 	$VBoxContainer.visible = false
 	$VBoxContainer4.visible = false
 	$VBoxContainer3.visible = true
 	
 func _button4_pressed():
 	clear_vbox_label(vbox_info)
+	clear_vbox_label(vbox_label)
 	$VBoxContainer.visible = false
 	$VBoxContainer3.visible = false
 	$VBoxContainer4.visible = true
