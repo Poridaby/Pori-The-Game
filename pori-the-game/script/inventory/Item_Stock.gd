@@ -42,7 +42,6 @@ func _on_inventory_updated():
 
 			if item["type"] == "Consomable":
 				ajout_objet(item, vbox_objet)
-				print("oui")
 
 		# Équipements
 		for item in Inventory.inventory_equipement:
@@ -89,7 +88,6 @@ func item_unfocus():
 	clear_vbox_label(vbox_info)
 
 func select_item(item):
-	print("le bouton est appuyé")
 	if item["type"] == "Cle":
 		clear_vbox_label(vbox_info)
 		popup_invent("", item["effect"])
@@ -100,8 +98,6 @@ func select_item(item):
 	item_select = item
 	
 func _button_pressed():
-	print("Avant PV:", global_var.Tonar_stats.pv)
-	print("Avant PM:", global_var.Tonar_stats.pm)
 	if item_select["type"] == "Consomable":
 		clear_vbox_label(vbox_label)
 		popup_invent("Tonar a bien été soigné !", "")
@@ -111,8 +107,6 @@ func _button_pressed():
 				global_var.Tonar_stats.pv = min(global_var.Tonar_stats.pv + item_select["effect_value"], global_var.Tonar_stats.pv_max)
 			"heal_pm":
 				global_var.Tonar_stats.pm = min(global_var.Tonar_stats.pm + item_select["effect_value"], global_var.Tonar_stats.pm_max)
-		print("Après PV", global_var.Tonar_stats.pv)
-		print("Après PM", global_var.Tonar_stats.pm)
 		Inventory.remove_item(item_select)
 		$Button.visible = false
 		$Button2.call_deferred("grab_focus")
@@ -123,15 +117,11 @@ func _button_pressed():
 			clear_vbox_label(vbox_info)
 			match item_select["stat"]:
 				"def":
-					print(global_var.Tonar_stats.def)
 					global_var.Tonar_stats.def += item_select["stat_value"]
 					item_select["equiped"] = true
-					print(global_var.Tonar_stats.def)
 				"atk":
-					print(global_var.Tonar_stats.atk)
 					global_var.Tonar_stats.atk += item_select["stat_value"]
 					item_select["equiped"] = true
-					print(global_var.Tonar_stats.atk)
 			$Button.visible = false
 			$Button3.call_deferred("grab_focus")
 		else:
@@ -141,10 +131,8 @@ func _button_pressed():
 			match item_select["stat"]:
 				"def":
 					global_var.Tonar_stats.def -= item_select["stat_value"]
-					print(global_var.Tonar_stats.def)
 				"atk":
 					global_var.Tonar_stats.atk -= item_select["stat_value"]
-					print(global_var.Tonar_stats.atk)
 				"spd":
 					global_var.Tonar_stats.spd -= item_select["stat_value"]
 			item_select["equiped"] = false

@@ -34,7 +34,6 @@ func _process(_delta):
 
 # Ajoute l'item dans l'inventaire
 func pickup_item():
-	print("item_effect =", item_stat)
 	var item = {
 		"quantity": 1,
 		"type": item_type,
