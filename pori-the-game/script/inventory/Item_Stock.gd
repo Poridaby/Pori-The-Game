@@ -1,9 +1,9 @@
 extends Control
 class_name InventoryUI
 
-@onready var vbox_objet = $VBoxContainer
-@onready var vbox_equipement = $VBoxContainer3
-@onready var vbox_cle = $VBoxContainer4
+@onready var vbox_objet = $ScrollContainer/VBoxContainer
+@onready var vbox_equipement = $ScrollContainer/VBoxContainer3
+@onready var vbox_cle = $ScrollContainer/VBoxContainer4
 @onready var vbox_label = $VBoxContainer2
 @onready var vbox_info = $VBoxContainer5
 var item_select
@@ -83,7 +83,7 @@ func item_focus(item):
 	if item["type"] == "Consomable" or item["type"] == "Cle":
 		popup_invent("", item["effect"])
 	elif item["type"] == "Equipement":
-		popup_invent("", item["stat"])
+		popup_invent("", item["effect"])
 	
 func item_unfocus():
 	clear_vbox_label(vbox_info)
@@ -155,23 +155,26 @@ func _button_pressed():
 func _button2_pressed():
 	clear_vbox_label(vbox_info)
 	clear_vbox_label(vbox_label)
-	$VBoxContainer.visible = true
-	$VBoxContainer4.visible = false
-	$VBoxContainer3.visible = false
+	$Button.visible = false
+	$ScrollContainer/VBoxContainer.visible = true
+	$ScrollContainer/VBoxContainer4.visible = false
+	$ScrollContainer/VBoxContainer3.visible = false
 	
 func _button3_pressed():
 	clear_vbox_label(vbox_info)
 	clear_vbox_label(vbox_label)
-	$VBoxContainer.visible = false
-	$VBoxContainer4.visible = false
-	$VBoxContainer3.visible = true
+	$Button.visible = false
+	$ScrollContainer/VBoxContainer.visible = false
+	$ScrollContainer/VBoxContainer4.visible = false
+	$ScrollContainer/VBoxContainer3.visible = true
 	
 func _button4_pressed():
 	clear_vbox_label(vbox_info)
 	clear_vbox_label(vbox_label)
-	$VBoxContainer.visible = false
-	$VBoxContainer3.visible = false
-	$VBoxContainer4.visible = true
+	$Button.visible = false
+	$ScrollContainer/VBoxContainer.visible = false
+	$ScrollContainer/VBoxContainer3.visible = false
+	$ScrollContainer/VBoxContainer4.visible = true
 	
 func popup_invent(action, information):
 	if action != "":

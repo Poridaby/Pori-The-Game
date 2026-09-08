@@ -37,23 +37,26 @@ script = ExtResource("1_8bl4t")
 
 [node name="Inventory_equip" parent="." unique_id=242430520 instance=ExtResource("11_h6dwm")]
 position = Vector2(1251, 325)
+item_effect = "Un gilet bleu très confortable qui possède même une ouverture pour téton."
 item_equiped = null
 
 [node name="Inventory_equip2" parent="." unique_id=693411344 instance=ExtResource("11_h6dwm")]
 position = Vector2(1300, 324)
 item_name = "épée"
 item_texture = ExtResource("3_wlq35")
+item_effect = "Une longue épée de 20cm très puissante qui est capable de pénétrer n'importe quoi, elle est toute dure."
 item_stat = "atk"
 item_equiped = null
 
 [node name="inventory_item" parent="." unique_id=1143526456 instance=ExtResource("8_beao6")]
 position = Vector2(1147, 321)
+item_effect = "Soigne 10 pv"
 
 [node name="inventory_item2" parent="." unique_id=293345233 instance=ExtResource("8_beao6")]
 position = Vector2(751, 329)
 item_name = "potion verte"
 item_texture = ExtResource("8_pvpg1")
-item_effect = "heal_pm"
+item_effect = "Soigne 10 pm"
 
 [node name="Inventory_clé" parent="." unique_id=198774498 instance=ExtResource("6_cs323")]
 position = Vector2(973, 377)

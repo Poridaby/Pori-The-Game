@@ -5,6 +5,7 @@ extends Node2D
 @export var item_type = ""
 @export var item_name = ""
 @export var item_texture: Texture
+@export var item_effect = ""
 @export var item_stat = ""
 @export var item_stat_value: int
 @export var item_equiped = false
@@ -39,6 +40,7 @@ func pickup_item():
 		"type": item_type,
 		"name": item_name,
 		"texture": item_texture,
+		"effect": item_effect,
 		"stat": item_stat,
 		"stat_value": item_stat_value,
 		"equiped": item_equiped,
