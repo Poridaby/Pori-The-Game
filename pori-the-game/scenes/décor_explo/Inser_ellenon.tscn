@@ -57,6 +57,7 @@ item_effect = "heal_pm"
 
 [node name="Inventory_clé" parent="." unique_id=198774498 instance=ExtResource("6_cs323")]
 position = Vector2(973, 377)
+item_effect = "Une petite clé, rien de plus simple en apparence. Elle permet d'ouvrir une porte."
 
 [node name="Panneau" parent="." unique_id=390411404 instance=ExtResource("2_qo2l3")]
 position = Vector2(575, 517)

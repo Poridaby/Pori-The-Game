@@ -3,6 +3,7 @@ extends Node
 # Variable de l'inventaire
 var inventory = []
 var inventory_equipement = []
+var inventory_cle = []
 
 # Scene et Node Référence
 var player_node: Node = null
@@ -12,8 +13,9 @@ signal inventory_updated
 
 func _ready():
 	# Le stockage de l'inventaire est initialisé à 30 slots
-	inventory.resize(30)
-	inventory_equipement.resize(30)
+	inventory.resize(100)
+	inventory_equipement.resize(100)
+	inventory_cle.resize(100)
 	
 # Rajoute un item dans l'inventaire
 func add_item(item):
@@ -40,6 +42,18 @@ func add_item(item):
 				return true
 			elif inventory_equipement[i] == null:
 				inventory_equipement[i] = item
+				inventory_updated.emit()
+				return true
+		return false
+	elif item["type"] == "Cle":
+		for i in range(inventory_cle.size()):
+			# Check si l'item existe dans l'inventaire et matche avec le type et l'effet
+			if inventory_cle[i] != null and inventory_cle[i]["type"] == item["type"] and inventory_cle[i]["effect"] == item["effect"] and inventory_cle[i]["name"] == item["name"]:
+				inventory_cle[i]["quantity"] += item["quantity"]
+				inventory_updated.emit()
+				return true
+			elif inventory_cle[i] == null:
+				inventory_cle[i] = item
 				inventory_updated.emit()
 				return true
 		return false

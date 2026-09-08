@@ -6,7 +6,6 @@ extends Node2D
 @export var item_name = ""
 @export var item_texture: Texture
 @export var item_effect = ""
-@export var item_effect_value: int
 var scene_path: String = "res://scenes/décor_explo/inventory_cle.tscn"
 
 # Réference du node de scène
@@ -39,7 +38,6 @@ func pickup_item():
 		"name": item_name,
 		"texture": item_texture,
 		"effect": item_effect,
-		"effect_value": item_effect_value,
 		"scene_path": scene_path
 	}
 	if Inventory.player_node:

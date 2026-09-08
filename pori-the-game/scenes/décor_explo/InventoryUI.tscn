@@ -79,6 +79,18 @@ offset_top = 0.19999695
 offset_right = 407.90485
 offset_bottom = 415.2
 
+[node name="VBoxContainer5" type="VBoxContainer" parent="Item_Stock" unique_id=2034913364]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.057000004
+anchor_top = 0.275
+anchor_right = 0.057000004
+anchor_bottom = 0.275
+offset_left = 645.89044
+offset_top = -9.800003
+offset_right = 1053.8904
+offset_bottom = 405.2
+
 [node name="VBoxContainer3" type="VBoxContainer" parent="Item_Stock" unique_id=1318858493]
 visible = false
 layout_mode = 1
@@ -139,3 +151,11 @@ offset_top = 314.0
 offset_right = 596.0
 offset_bottom = 425.0
 text = "Equipement"
+
+[node name="Button4" type="Button" parent="Item_Stock" unique_id=670395634]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 433.0
+offset_right = 596.0
+offset_bottom = 544.0
+text = "Objet clé"
